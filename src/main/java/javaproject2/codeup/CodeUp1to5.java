@@ -6,6 +6,6 @@ public class CodeUp1to5 {
         System.out.println("Hello World");              // 1002
         System.out.println("Hello\nWorld");             // 1003
         System.out.println("\'Hello\'");                // 1004
-        System.out.println("\"Hello\"");                // 1005
+        System.out.println("\"Hello World\"");                // 1005
     }
 }
