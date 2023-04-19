@@ -1,4 +1,4 @@
-package org.example;
+package javaproject2;
 
 public class PrintHelloTest {
     public static void main(String[] args) {

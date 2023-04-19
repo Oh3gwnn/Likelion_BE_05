@@ -1,4 +1,4 @@
-package org.example;
+package javaproject2;
 
 public class ByeClass {
     public void print() {
