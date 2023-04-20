@@ -11,6 +11,6 @@ public class PrintfEX {
         // printfEX.print();
 
         LocalDate now = LocalDate.now();
-        System.out.println(now);
+        System.out.printf("%s", now);
     }
 }
