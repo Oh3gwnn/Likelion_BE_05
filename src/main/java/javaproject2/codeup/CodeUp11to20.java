@@ -14,7 +14,6 @@ public class CodeUp11to20 {
     }
     */
     public static void main(String[] args) {
-        // import Scanner랑 Scanner 호출 챙기기
         Scanner sc = new Scanner(System.in);
 
         // 1011
