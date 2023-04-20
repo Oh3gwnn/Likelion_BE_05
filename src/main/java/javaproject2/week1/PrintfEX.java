@@ -1,12 +1,16 @@
 package javaproject2.week1;
 
+import java.time.LocalDate;
 public class PrintfEX {
     void print() {
         System.out.printf("%s", "Hi");
     }
 
     public static void main(String[] args) {
-        PrintfEX printfEX = new PrintfEX();
-        printfEX.print();
+        // PrintfEX printfEX = new PrintfEX();
+        // printfEX.print();
+
+        LocalDate now = LocalDate.now();
+        System.out.println(now);
     }
 }
