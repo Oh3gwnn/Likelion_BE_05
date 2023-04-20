@@ -5,6 +5,6 @@ import java.util.Scanner;
 public class ScannerEX2 {
     public void inputTwoNumbersAndPlus() {
         Scanner sc = new Scanner(System.in);
-        System.out.println(sc.nextInt() + sc.nextInt());
+        System.out.println(sc.next() + sc.next());
     }
 }
