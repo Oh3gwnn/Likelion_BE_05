@@ -1,4 +1,4 @@
-package javaproject2;
+package javaproject2.week0;
 
 public class ByeClassTest {
     public static void main(String[] args) {
