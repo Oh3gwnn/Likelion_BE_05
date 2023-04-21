@@ -6,5 +6,15 @@ public class UserTest {
         user.name = "택";
         user.phoneNumber = "010-0000-0000";
         user.age = 26;
+
+        User kid = new User();
+        kid.name = "어린이";
+        kid.phoneNumber = "010-0033-0000";
+        kid.age = 11;
+
+        User adt = new User();
+        adt.name = "어른이";
+        adt.phoneNumber = "010-0011-0000";
+        adt.age = 20;
     }
 }
