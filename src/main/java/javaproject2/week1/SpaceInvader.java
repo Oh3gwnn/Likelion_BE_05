@@ -12,9 +12,9 @@ public class SpaceInvader {
     }
 
     public static void main(String[] args) {
-        SpaceInvader spaceInvader = new SpaceInvader();
-        spaceInvader.moveLeft();
-        spaceInvader.moveRight();
+        SpaceInvader si = new SpaceInvader();
+        si.moveLeft();
+        si.moveRight();
     }
 }
 
