@@ -54,10 +54,10 @@ public class CodeUp31to40 {
         int ascii = is.read();
         System.out.printf("%d", ascii);
 
-        /* is 안받고 얘도 됨
+        /** is 안받고 얘도 됨
         int chtonum = (int)sc.next().charAt(0);
         System.out.println(chtonum);
-        */
+        **/
 
         // 1037
         char numtoch = (char)sc.nextInt();
