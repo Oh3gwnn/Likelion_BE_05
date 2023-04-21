@@ -2,7 +2,7 @@ package javaproject2.codeup;
 
 import java.util.Scanner;
 
-public class CodeUp1to10 {
+public class CodeUp01to10 {
     public static void main(String[] args) {
         System.out.println("Hello");                    // 1001
         System.out.println("Hello World");              // 1002
