@@ -1,4 +1,4 @@
-package javaproject2.codeup;
+package javaproject2.codeup.question01to80;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
