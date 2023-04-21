@@ -52,5 +52,28 @@ public class CodeUp51to60 {
         int i4 = sc.nextInt(), i5 = sc.nextInt();
         if(i4==1 || i5==1) System.out.println(1);
         else System.out.println(0);
+
+        // 1056
+        int i6 = sc.nextInt(), i7 = sc.nextInt();
+        if(i6!=i7) System.out.println(1);
+        else System.out.println(0);
+
+        // 1057
+        int ox1 = sc.nextInt(), ox2 = sc.nextInt();
+        if(ox1!=ox2) System.out.println(0);
+        else System.out.println(1);
+
+        // 1058
+        int ox3 = sc.nextInt(), ox4 = sc.nextInt();
+        if(ox3==0 && ox4==0) System.out.println(1);
+        else System.out.println(0);
+
+        // 1059
+        int bitwise = ~sc.nextInt();
+        System.out.println(bitwise);
+
+        // 1060
+        int bitwise1 = sc.nextInt() & sc.nextInt();
+        System.out.println(bitwise1);
     }
 }
