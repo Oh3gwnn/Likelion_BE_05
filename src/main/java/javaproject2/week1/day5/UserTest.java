@@ -5,6 +5,6 @@ public class UserTest {
         User user = new User();
         user.name = "택";
         user.phoneNumber = "010-0000-0000";
-        user.age = 98;
+        user.age = 26;
     }
 }
