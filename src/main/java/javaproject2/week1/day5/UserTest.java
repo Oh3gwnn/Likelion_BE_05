@@ -20,5 +20,6 @@ public class UserTest {
         System.out.printf("%s님은 성인입니까? %s\n", user.name, user.isAdult());
         System.out.printf("%s님은 성인입니까? %s\n", kid.name, kid.isAdult());
         System.out.printf("%s님은 성인입니까? %s\n", adt.name, adt.isAdult());
+
     }
 }
