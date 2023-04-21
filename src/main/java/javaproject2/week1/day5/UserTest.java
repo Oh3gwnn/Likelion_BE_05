@@ -16,5 +16,9 @@ public class UserTest {
         adt.name = "어른이";
         adt.phoneNumber = "010-0011-0000";
         adt.age = 20;
+
+        System.out.printf("%s님은 성인입니까? %s\n", user.name, user.isAdult());
+        System.out.printf("%s님은 성인입니까? %s\n", kid.name, kid.isAdult());
+        System.out.printf("%s님은 성인입니까? %s\n", adt.name, adt.isAdult());
     }
 }
