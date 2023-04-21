@@ -1,4 +1,4 @@
-package javaproject2.week1;
+package javaproject2.week1.day1to4;
 
 import java.util.Scanner;
 

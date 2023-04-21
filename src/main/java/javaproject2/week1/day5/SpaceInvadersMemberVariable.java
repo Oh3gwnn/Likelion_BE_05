@@ -1,4 +1,4 @@
-package javaproject2.week1;
+package javaproject2.week1.day5;
 
 public class SpaceInvadersMemberVariable {
     int location;

@@ -1,4 +1,4 @@
-package javaproject2.week1;
+package javaproject2.week1.day5;
 
 import javaproject2.week0.PrintHello;
 
