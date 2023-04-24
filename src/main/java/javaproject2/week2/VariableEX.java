@@ -1,4 +1,4 @@
-package javaproject2.week1.day5;
+package javaproject2.week2;
 
 public class VariableEX {
     public static void main(String[] args) {
