@@ -36,5 +36,12 @@ public class NarrowingCasting {
         String val4 = "2.5";
         float result = Float.parseFloat(val3) + Float.parseFloat(val4);
         System.out.println("val3 + val4 = " + result);
+
+        // NumberFormatException 오류
+//        String val3 = "1.5";
+//        String val4 = "2.5";
+//
+//        int result3 = Integer.parseInt(val3) + Integer.parseInt(val4);
+//        System.out.println("result = " + result3);
     }
 }
