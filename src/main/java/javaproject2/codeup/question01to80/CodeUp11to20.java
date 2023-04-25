@@ -3,7 +3,7 @@ package javaproject2.codeup.question01to80;
 import java.util.Scanner;
 
 public class CodeUp11to20 {
-    /* Main 클래스 복붙용
+    /** Main 클래스 복붙용
     import java.util.Scanner;
 
     public class Main {
@@ -12,7 +12,7 @@ public class CodeUp11to20 {
 
         }
     }
-    */
+    **/
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
