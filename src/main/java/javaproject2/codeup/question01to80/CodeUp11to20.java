@@ -57,5 +57,9 @@ public class CodeUp11to20 {
         String mj = sc.next();
         mj = mj.replace("-", "");
         System.out.printf("%s", mj);
+
+        // 1020 - substring
+        String mj2 = sc.next();
+        System.out.printf("%s%s", mj2.substring(0, 6), mj2.substring(7, mj2.length()));
     }
 }
