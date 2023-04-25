@@ -1,4 +1,4 @@
-package javaproject2.week2.day02;
+package javaproject2.week2.day07;
 
 import java.util.Arrays;
 

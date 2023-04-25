@@ -1,4 +1,4 @@
-package javaproject2.week2.day01;
+package javaproject2.week2.day06;
 
 public class ParseDouble8Digits {
     public static void main(String[] args) {
