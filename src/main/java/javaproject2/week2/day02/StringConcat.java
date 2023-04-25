@@ -1,4 +1,4 @@
-package javaproject2.week2;
+package javaproject2.week2.day02;
 
 public class StringConcat {
     public static void main(String[] args) {

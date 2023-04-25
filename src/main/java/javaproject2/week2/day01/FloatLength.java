@@ -1,4 +1,4 @@
-package javaproject2.week2;
+package javaproject2.week2.day01;
 
 public class FloatLength {
     public static void main(String[] args) {
