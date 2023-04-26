@@ -1,7 +1,5 @@
 package javaproject2.week2.day08;
 
-import java.util.Arrays;
-
 public class Remainder687Sum {
     public static void main(String[] args) {
         int num = 687;
