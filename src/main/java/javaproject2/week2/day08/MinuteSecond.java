@@ -1,7 +1,6 @@
 package javaproject2.week2.day08;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 public class MinuteSecond {
     public static void main(String[] args) {
