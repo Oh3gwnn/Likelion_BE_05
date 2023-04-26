@@ -1,6 +1,5 @@
 package javaproject2.week2.day08;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class SwapEx {
@@ -13,5 +12,9 @@ public class SwapEx {
         arr[1] = temp;
 
         System.out.println("변경 후: " + Arrays.toString(arr));
+
+        // 오름차순 정렬
+        Arrays.sort(arr);
+        System.out.println("오름차순 정렬 후: " + Arrays.toString(arr));
     }
 }
