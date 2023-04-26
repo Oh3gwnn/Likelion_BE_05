@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class CodeUp41to50 {
-    /* Main 클래스 복붙용
+    /** Main 클래스 복붙용
     import java.util.Scanner;
 
     public class Main {
@@ -14,7 +14,7 @@ public class CodeUp41to50 {
 
         }
     }
-    */
+    **/
     public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
 
