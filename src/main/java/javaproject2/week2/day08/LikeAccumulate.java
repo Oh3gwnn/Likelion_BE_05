@@ -1,4 +1,4 @@
-package javaproject2.week2.day08.Class;
+package javaproject2.week2.day08;
 
 public class LikeAccumulate {
     public static void main(String[] args) {
