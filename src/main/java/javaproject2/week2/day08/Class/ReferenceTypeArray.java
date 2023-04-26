@@ -1,4 +1,6 @@
-package javaproject2.week2.day08;
+package javaproject2.week2.day08.Class;
+
+import javaproject2.week2.day08.Class.Student;
 
 public class ReferenceTypeArray {
 
