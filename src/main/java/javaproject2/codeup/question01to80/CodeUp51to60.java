@@ -31,22 +31,10 @@ public class CodeUp51to60 {
         int i1 = sc.nextInt() == 1 ? 0 : 1;
         System.out.println(i1);
 
-        // 1054 이게 맞나?
-        int i2 = sc.nextInt(), i3 = sc.nextInt();
-        if(i2==i3){
-            if(i2==1) {
-                System.out.println(1);
-            } else {
-                System.out.println(0);
-            }
-        } else {
-            System.out.println(0);
-        }
-        /** 자바도 역시 한줄 if 되는구나(깨달음)
+        // 1054 자바도 역시 한줄 if 되는구나(깨달음)
         int i2 = sc.nextInt(), i3 = sc.nextInt();
         if(i2==1 && i3==1) System.out.println(1);
         else System.out.println(0);
-        **/
 
         // 1055
         int i4 = sc.nextInt(), i5 = sc.nextInt();
