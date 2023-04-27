@@ -8,5 +8,10 @@ public class IncreaseFirst {
         idx += 1; // idx가 1로 증가
         System.out.println(arr[idx]); // 1번째 있는 1을 출력
         idx += 1; // idx가 2로 증가
+
+        int idx2 = 0;
+        int[] arr2 = {2, 1, 7, 9};
+        System.out.println(arr2[idx2++]); // 0번째 있는 2를 출력
+        System.out.println(arr2[idx2++]); // 1번째 있는 1을 출력
     }
 }
