@@ -1,6 +1,4 @@
-package javaproject2.week1.day5;
-
-import java.awt.*;
+package javaproject2.week1.day05;
 
 
 public class PointTest {

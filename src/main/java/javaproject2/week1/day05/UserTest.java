@@ -1,4 +1,4 @@
-package javaproject2.week1.day5;
+package javaproject2.week1.day05;
 
 public class UserTest {
     public static void main(String[] args) {
