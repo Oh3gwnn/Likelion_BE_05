@@ -1,6 +1,6 @@
 package javaproject2.programmers;
 
-public class CollatzConjecture {
+public class CollatzConjecture_12943 {
     public int solution(long num) {
         int answer = 0;
         while (num > 1) {

@@ -1,6 +1,6 @@
 package javaproject2.programmers;
 
-public class SecretMap {
+public class SecretMap_17681 {
     public String[] solution(int n, int[] arr1, int[] arr2) {
         String[] answer = new String[n];
 
