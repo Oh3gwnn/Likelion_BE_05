@@ -1,4 +1,4 @@
-package javaproject2.codeup;
+package javaproject2.programmers;
 
 public class SecretMap {
     public String[] solution(int n, int[] arr1, int[] arr2) {
