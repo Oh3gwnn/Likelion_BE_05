@@ -18,6 +18,7 @@ public class CodeUp71to80 {
         Scanner sc = new Scanner(System.in);
 
         // 1071 자바에 goto가 있나? 안되는데 모르겠당 1073
+        // for (int i = 0; true ; i++) : for도 무한루프 가능.
         while (true) {
             int a = sc.nextInt();
             if (a == 0) break;
