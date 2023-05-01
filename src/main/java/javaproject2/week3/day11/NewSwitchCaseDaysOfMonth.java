@@ -2,7 +2,9 @@ package javaproject2.week3.day11;
 
 public class NewSwitchCaseDaysOfMonth {
     public static void main(String[] args) {
-        int month = 13;
+        // int month = 13;
+        // java.lang.IllegalArgumentException: 1~12월을 입력해주세요: 13
+        int month = 5;
         int lastDate = switch(month) {
             case 1, 3, 5, 7, 8, 10, 12 -> 31;
             case 4, 6, 9, 11 -> 30;
