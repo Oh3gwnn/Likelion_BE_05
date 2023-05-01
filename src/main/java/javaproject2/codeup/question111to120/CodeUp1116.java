@@ -1,4 +1,4 @@
-package javaproject2.codeup;
+package javaproject2.codeup.question111to120;
 
 import java.util.Scanner;
 

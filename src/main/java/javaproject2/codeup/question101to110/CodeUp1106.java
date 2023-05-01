@@ -1,4 +1,4 @@
-package javaproject2.codeup;
+package javaproject2.codeup.question101to110;
 
 public class CodeUp1106 {
     public static void main(String[] args) {
