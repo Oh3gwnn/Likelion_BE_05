@@ -1,5 +1,7 @@
 package javaproject2.week3.day11;
 
+import java.util.Scanner;
+
 public class MultiplicationTable {
     public static void main(String[] args) {
         for (int i = 2; i <= 9; i++) {
@@ -8,7 +10,14 @@ public class MultiplicationTable {
         }
         System.out.println();
 
-        int arr[] = {2, 4, 8, 9}; // for문 서로 바꾸면 가로 <-> 세로 바뀜
+        // n으로 몇 개 입력할 건지 + 원하는 인수 구구단
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+
+        // for문 서로 바꾸면 가로 <-> 세로 바뀜
         for (int a : arr) {
             for (int i = 2; i <= 9; i++) System.out.printf("[%d X %d = %2d] ", a, i, a * i);
             System.out.println();
