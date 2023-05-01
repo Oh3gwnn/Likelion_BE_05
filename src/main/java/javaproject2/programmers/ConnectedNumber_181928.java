@@ -13,6 +13,7 @@ public class ConnectedNumber_181928 {
 }
 
 //    def solution(num_list):
+//        # 다 풀고 깨달았는데 이거 string으로 안해도 될 듯?
 //        odd, even = [], []
 //        for i in num_list:
 //        if i%2==1: odd += str(i)
