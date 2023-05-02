@@ -8,5 +8,6 @@ public class WhileFactorial {
             answer *= num--;
             System.out.printf("%d ", answer); // 가로 출력
         }
+        // System.out.println(answer); // 한 번 출력
     }
 }
