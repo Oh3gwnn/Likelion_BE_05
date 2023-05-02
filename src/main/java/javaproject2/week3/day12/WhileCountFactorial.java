@@ -7,6 +7,11 @@ public class WhileCountFactorial {
         while (cnt < 11) System.out.printf("%d ", cnt++);
         System.out.println();
 
+        // count reverse
+        int cnt2 = 10;
+        while (cnt2 >= 0) System.out.printf("%d ", cnt2--);
+        System.out.println();
+
         // factorial
         int num = 5;
         int answer = 1;
