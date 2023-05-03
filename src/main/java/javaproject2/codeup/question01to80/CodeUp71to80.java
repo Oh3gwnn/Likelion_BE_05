@@ -24,6 +24,11 @@ public class CodeUp71to80 {
             if (a == 0) break;
             else System.out.println(a);
         }
+//        int a1;
+//        do {
+//            a1 = sc.nextInt();
+//            if (a1 != 0) System.out.println(a1);
+//        } while (a1 != 0);
 
         // 1072
         int b = sc.nextInt();
