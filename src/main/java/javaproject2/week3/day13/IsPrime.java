@@ -8,11 +8,7 @@ public class IsPrime {
         }
 
         int factors = 0;
-        for (int i = 2; i < num; i++) {
-            if(num % i == 0){
-                factors++;
-            }
-        }
+        for (int i = 2; i < num; i++) if(num % i == 0) factors++;
         System.out.println("factors: " + factors);
         System.out.println(factors == 0);
     }
