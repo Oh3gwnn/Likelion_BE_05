@@ -2,7 +2,7 @@ package javaproject2.week3.day13;
 
 public class IsPrime {
     public static void main(String[] args) {
-        int num = 7;
+        int num = 10;
         for (int i = 2; i < num; i++) {
             System.out.printf("%d %% %d = %d\n", num, i, num % i);
         }
