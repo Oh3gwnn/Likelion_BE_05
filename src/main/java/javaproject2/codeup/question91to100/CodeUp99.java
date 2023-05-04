@@ -4,30 +4,34 @@ import java.util.Scanner;
 
 public class CodeUp99 {
     public static void main(String[] args) {
-        // 입력
+        // 입력 (10*10 미로 구조, 먹이 위치)
         Scanner sc = new Scanner(System.in);
         int a[][] = new int[10][10];
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) a[i][j] = sc.nextInt();
         }
-        // 개미 현위치
+
+        // 개미 현위치(좌표(x, y))
         int x = 1, y = 1;
 
         while (true) {
+            // 편하게 보시라고 배열에 맞게 좌표 넣어드렸습니다.
+            // ex) 좌표(x, y) -> a[y][x]
+
             // 먹이 도착했을 경우
-            if (a[x][y] == 2) {
-                a[x][y] = 9;
+            if (a[y][x] == 2) {
+                a[y][x] = 9;
                 break;
             }
 
-            // 현재 자리 체크
-            a[x][y] = 9;
+            // 개미 현 위치 이동했다고 체크
+            a[y][x] = 9;
 
-            // 오른쪽 벽 확인 후 아래 벽 확인
-            if (a[x][y + 1] != 1) y += 1;
-            // 아래 벽은 오른쪽이 막혀있을 때만
-            else if (a[x + 1][y] != 1 && a[x][y + 1] == 1) x += 1;
-            // 둘 다 막혔으면 끗
+            // 오른쪽(x+1) 벽이 없다? 우측 한 칸 이동
+            if (a[y][x + 1] != 1) x += 1;
+                // 오른쪽 벽이 있고, 아래(y+1) 벽이 없다? 아래 한 칸 이동
+            else if (a[y + 1][x] != 1 && a[y][x + 1] == 1) y += 1;
+                // 둘 다 막혔으면 끗
             else break;
         }
 
