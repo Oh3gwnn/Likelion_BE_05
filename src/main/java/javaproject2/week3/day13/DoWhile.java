@@ -11,6 +11,7 @@ public class DoWhile {
 
         Scanner scanner = new Scanner(System.in);
         int input;
+
         do {
             System.out.print("짝수를 입력하세요: ");
             input = scanner.nextInt();
