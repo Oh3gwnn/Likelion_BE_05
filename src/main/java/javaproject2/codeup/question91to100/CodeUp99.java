@@ -40,6 +40,7 @@ public class CodeUp99 {
         }
     }
 }
+
 /** 1100번 문제는 없어서 1101 하나 넣어드렸읍니다 :)
 import java.util.Scanner;
 public class  Main {

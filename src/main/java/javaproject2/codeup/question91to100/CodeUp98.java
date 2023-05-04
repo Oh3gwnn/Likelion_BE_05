@@ -7,6 +7,7 @@ public class CodeUp98 {
         Scanner sc = new Scanner(System.in);
         int h = sc.nextInt(), w = sc.nextInt(), a[][] = new int [h][w];
         int n = sc.nextInt();
+
         for (int k = 0; k < n; k++) {
             int l = sc.nextInt(), d = sc.nextInt();
             int x = sc.nextInt()-1, y = sc.nextInt()-1;
@@ -21,6 +22,7 @@ public class CodeUp98 {
                 j++;
             }
         }
+
         for (int i = 0; i < h; i++) {
             for (int j = 0; j < w; j++) System.out.printf("%d ", a[i][j]);
             System.out.printf("\n");
