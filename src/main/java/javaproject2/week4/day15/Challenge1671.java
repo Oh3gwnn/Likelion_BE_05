@@ -19,21 +19,20 @@ public class Challenge1671 {
     public static void main(String[] args) {
         Challenge1671 q1671 = new Challenge1671();
         Scanner sc = new Scanner(System.in);
-        String user = "";
-        int com = 0, cnt = 0;
+        int cnt = 0;
 
         while (true) {
             System.out.printf("가위, 바위, 보 : ");
             cnt += 1;
-            user = sc.nextLine();
-            com = (int)(Math.random() * 3);
-            if (q1671.Play(user, com) == "win") {
+            String user = sc.nextLine();
+            int com = (int)(Math.random() * 3);
+            String res = q1671.Play(user, com);
+
+            if (res == "win") {
                 System.out.printf("%d번 가위바위보 후 이겼습니다.", cnt);
                 break;
             }
-            else if (q1671.Play(user, com) == "tie") {
-                System.out.println("비겼습니다.");
-            }
+            else if (res == "tie") System.out.println("비겼습니다.");
             else System.out.println("졌습니다.");
         }
     }
