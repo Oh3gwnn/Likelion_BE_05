@@ -5,7 +5,18 @@ import java.util.Arrays;
 public class Codeup1098OOP {
 
     private int[][] arr;
+    private boolean printSeparator;
 
+    public Codeup1098OOP(){
+        this.arr = new int[5][5];
+    }
+    public Codeup1098OOP(boolean printSeparator){
+        this.arr = new int[5][5];
+        this.printSeparator = printSeparator;
+    }
+    public Codeup1098OOP(int rowCnt){
+        this.arr = new int[rowCnt][5];
+    }
     public Codeup1098OOP(int rowCnt, int colCnt){
         this.arr = new int[rowCnt][colCnt];
     }
@@ -30,7 +41,10 @@ public class Codeup1098OOP {
     public static void main(String[] args) {
         int rowCnt = 5;
         int colCnt = 5;
-        Codeup1098OOP c1098 = new Codeup1098OOP(rowCnt, colCnt);
+//        Codeup1098OOP c1098 = new Codeup1098OOP();
+//        Codeup1098OOP c1098 = new Codeup1098OOP(rowCnt);
+//        Codeup1098OOP c1098 = new Codeup1098OOP(rowCnt, colCnt);
+        Codeup1098OOP c1098 = new Codeup1098OOP(false);
         c1098.printArr();
         c1098.setBeam(2, 0, 1, 1);
         c1098.printArr();
