@@ -2,12 +2,12 @@ package javaproject2.week4.day16;
 
 import java.util.Scanner;
 
-public class ReversePyramid {
+public class MakeChoiceShape {
 
     // 0. SpaceChar, SpaceChar 생성자
     private String SpaceChar = "0";
 
-    public ReversePyramid(String spaceChar) {
+    public MakeChoiceShape(String spaceChar) {
         this.SpaceChar = spaceChar;
     }
 
@@ -23,7 +23,7 @@ public class ReversePyramid {
 
     // 2. 모양 만들기
     public static void MakeShape(int height, int choice) {
-        ReversePyramid rp = new ReversePyramid(" ");
+        MakeChoiceShape rp = new MakeChoiceShape(" ");
 
         for (int i = 0; i < height; i++) {
             System.out.printf(rp.makeALine(height, i, choice));
