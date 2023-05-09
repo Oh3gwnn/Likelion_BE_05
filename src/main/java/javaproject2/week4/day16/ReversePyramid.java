@@ -8,7 +8,7 @@ public class ReversePyramid {
     }
 
     public String makeALine(int height, int i) {
-        return String.format("%s %s\n", SpaceChar.repeat(i), 2 * (height - i) - 1);
+        return String.format("%s %s\n", SpaceChar.repeat(i), "*".repeat(2 * (height - i) - 1));
     }
 
     public static void main(String[] args) {
