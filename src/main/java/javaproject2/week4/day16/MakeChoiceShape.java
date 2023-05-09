@@ -19,6 +19,8 @@ public class MakeChoiceShape {
         int choice = sc.nextInt();
         System.out.printf("길이를 입력해주세요 : ");
         int height = sc.nextInt();
+
+        MakeShape(height, choice);
     }
 
     // 2. 모양 만들기
