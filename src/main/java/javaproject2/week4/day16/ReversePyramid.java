@@ -9,7 +9,7 @@ public class ReversePyramid {
     public ReversePyramid(String spaceChar) {
         this.SpaceChar = spaceChar;
     }
-    //
+    // 시작
     public static void Start() {
         ReversePyramid rp = new ReversePyramid(" ");
         Scanner sc = new Scanner(System.in);
