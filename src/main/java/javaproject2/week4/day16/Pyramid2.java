@@ -33,6 +33,6 @@ public class Pyramid2 extends ShapeDrawer {
 
         // 추상클래스 사용
         PyramidShapeDrawer ps = new PyramidShapeDrawer();
-        ps.printPyramid(3);
+        ps.printShape(3);
     }
 }
