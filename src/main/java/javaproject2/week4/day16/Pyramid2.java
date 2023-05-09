@@ -6,14 +6,14 @@ public class Pyramid2 {
     public Pyramid2(String spaceChar) {
         this.spaceChar = spaceChar;
     }
-    public String makeALine(String spaceChar, int height, int i) {
+    public String makeALine(int height, int i) {
         return String.format("%s%s\n", spaceChar.repeat(height - i - 1), "*".repeat(2 * i + 1));
     }
 
     public void printPyramidWithSpaceChar(int height, String spaceChar) {
         // 기능이 3가지
         for (int i = 0; i < height; i++) {
-            System.out.print(makeALine(spaceChar, height, i));
+            System.out.print(makeALine(height, i));
         }
     }
     public void printPyramid(int height) {
