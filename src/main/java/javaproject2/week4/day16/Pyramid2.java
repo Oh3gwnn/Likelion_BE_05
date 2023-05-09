@@ -1,11 +1,13 @@
 package javaproject2.week4.day16;
 
-public class Pyramid2 {
+public class Pyramid2 extends ShapeDrawer {
+
     private String spaceChar = "0";
 
     public Pyramid2(String spaceChar) {
         this.spaceChar = spaceChar;
     }
+
     public String makeALine(int height, int i) {
         return String.format("%s%s\n", spaceChar.repeat(height - i - 1), "*".repeat(2 * i + 1));
     }
