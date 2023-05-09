@@ -23,8 +23,8 @@ public class SugarCookie {
             int x = sc.nextInt() - 1, y = sc.nextInt() - 1;
 
             sugars.Pullingout(l, d, x, y);
+            sugars.PrintSugar();
         }
-        sugars.PrintSugar();
     }
 
     // 2. 설탕 뽑기
@@ -47,6 +47,7 @@ public class SugarCookie {
             for (int j = 0; j < arr[i].length; j++) System.out.printf("%d ", arr[i][j]);
             System.out.printf("\n");
         }
+        System.out.println("---------");
     }
 
     // 메인
