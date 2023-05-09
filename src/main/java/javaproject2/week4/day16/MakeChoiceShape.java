@@ -15,7 +15,7 @@ public class MakeChoiceShape {
     public static void Start() {
         Scanner sc = new Scanner(System.in);
 
-        System.out.printf("(평행사변형: 0, 역피라미드:1)\n만들 모양 숫자를 입력해주세요 : ");
+        System.out.printf("만들 모양 숫자를 입력해주세요\n(평행사변형: 0, 역피라미드: 1) : ");
         int choice = sc.nextInt();
         System.out.printf("길이를 입력해주세요 : ");
         int height = sc.nextInt();
