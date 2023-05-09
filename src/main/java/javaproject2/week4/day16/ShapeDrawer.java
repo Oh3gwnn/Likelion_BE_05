@@ -2,7 +2,7 @@ package javaproject2.week4.day16;
 
 // 추상 클래스
 public abstract class ShapeDrawer {
-    public void printPyramid(int height) {
+    public void printShape(int height) {
         for (int i = 0; i < height; i++) {
             System.out.printf(makeALine(height, i));
         }
