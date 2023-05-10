@@ -4,23 +4,26 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class DrawDiamond {
+    // 1. repeat() 사용
     public static String getRepeatedSymbol(String symbol, int n) {
         return symbol.repeat(n);
     }
 
-    // repeat 사용 안하고 StringBuilder 사용(StringBuffer도 사용방법 비슷)
+    // 2. StringBuilder() 사용
+    // (repeat() 사용 X, StringBuffer()도 사용방법 비슷)
     public static String getStringBuilder(String symbol, int n) {
-        StringBuilder sb = new StringBuilder();
-//        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder(); // StringBuffer sb = new StringBuffer();
+
         for (int i = 0; i < n; i++) {
             sb.append(symbol);
         }
         return sb.toString();
     }
 
-    // 한 줄 출력(다시 만들어야 할 듯) 한 줄 출력이 아닌데?
+    // 한 줄 출력
     public static void makeALine(int h, int i) {
-        int pivot = h / 2;
+        int pivot = h / 2; // 메인 함수에서 받는 것보다 이게 나을 것 같아서
+
         if(i <= pivot){
             System.out.printf("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
         } else {
@@ -28,7 +31,7 @@ public class DrawDiamond {
         }
     }
 
-    // 파일 만들기 (FileWriter)
+    // 파일 만들기 (FileWriter() 사용)
     public static void makeAFile(int h) throws IOException {
         FileWriter writer = new FileWriter("output.txt");
         int pivot = h / 2;
