@@ -1,4 +1,4 @@
-package javaproject2.codeup;
+package javaproject2.codeup.others;
 
 import java.util.Scanner;
 
