@@ -15,7 +15,7 @@ public class RightTrianglePrinter {
         printer.printToFile(printer.printShape(h));
     }
 
-        public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         RightTrianglePrinter pd3 = new RightTrianglePrinter(new TrianglePrinter());
         pd3.makeRightTriangle(6);
     }
