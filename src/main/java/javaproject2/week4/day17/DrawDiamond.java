@@ -32,7 +32,7 @@ public class DrawDiamond {
     }
 
     // 파일 만들기 (FileWriter() 사용)
-    public static void makeAFile(int h) throws IOException {
+    public void makeAFile(int h) throws IOException {
         FileWriter writer = new FileWriter("output.txt");
         int pivot = h / 2;
 
@@ -46,9 +46,14 @@ public class DrawDiamond {
         writer.close();
     }
 
-    public static void main(String[] args) throws IOException {
-        int h = 7;
+    // printShape()
+    public void printShape(int h) {
         for (int i = 0; i < h; i++) makeALine(h, i);
-        makeAFile(h);
+    }
+
+    public static void main(String[] args) throws IOException {
+        DrawDiamond dd = new DrawDiamond();
+        dd.printShape(7);
+        dd.makeAFile(7);
     }
 }
