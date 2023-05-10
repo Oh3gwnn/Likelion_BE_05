@@ -18,20 +18,36 @@ public class DrawDiamond {
         return sb.toString();
     }
 
-    public static void main(String[] args) throws IOException {
-        // 파일 만들기 (FileWriter)
-        FileWriter writer = new FileWriter("output.txt");
-        int h = 7;
+    // 한 줄 출력(다시 만들어야 할 듯) 한 줄 출력이 아닌데?
+    public static void makeALine(int h) {
         int pivot = h / 2;
         for (int i = 0; i < h; i++) {
             if(i <= pivot){
-                System.out.printf("%s%s\n", getRepeatedSymbol("0", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
-                writer.write(getRepeatedSymbol("0", -2 + h - i - 2) + getRepeatedSymbol("*", 2 * i + 1) + "\n");
+                System.out.printf("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
             } else {
-                System.out.printf("%s%s\n", getStringBuilder("0", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
-                writer.write(getStringBuilder("0", i - pivot) + getStringBuilder("*", 2 * (h - i) - 1) + "\n");
+                System.out.printf("%s%s\n", getStringBuilder(" ", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
+            }
+        }
+    }
+
+    // 파일 만들기 (FileWriter)
+    public static void makeAFile(int h) throws IOException {
+        FileWriter writer = new FileWriter("output.txt");
+        int pivot = h / 2;
+
+        for (int i = 0; i < h; i++) {
+            if(i <= pivot){
+                writer.write(getRepeatedSymbol(" ", -2 + h - i - 2) + getRepeatedSymbol("*", 2 * i + 1) + "\n");
+            } else {
+                writer.write(getStringBuilder(" ", i - pivot) + getStringBuilder("*", 2 * (h - i) - 1) + "\n");
             }
         }
         writer.close();
+    }
+
+    public static void main(String[] args) throws IOException {
+        int h = 7;
+        makeALine(h);
+        makeAFile(h);
     }
 }
