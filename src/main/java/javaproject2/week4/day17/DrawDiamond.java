@@ -1,9 +1,11 @@
 package javaproject2.week4.day17;
 
+import javaproject2.week4.day16.ShapeDrawer;
+
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class DrawDiamond {
+public class DrawDiamond extends ShapeDrawer {
     // 1. repeat() 사용
     public static String getRepeatedSymbol(String symbol, int n) {
         return symbol.repeat(n);
@@ -21,14 +23,16 @@ public class DrawDiamond {
     }
 
     // 한 줄 출력
-    public static void makeALine(int h, int i) {
+    @Override
+    public String makeALine(int h, int i) {
         int pivot = h / 2; // 메인 함수에서 받는 것보다 이게 나을 것 같아서
-
+        String str = "";
         if(i <= pivot){
-            System.out.printf("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
+            str = String.format("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
         } else {
-            System.out.printf("%s%s\n", getStringBuilder(" ", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
+            str = String.format("%s%s\n", getStringBuilder(" ", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
         }
+        return str;
     }
 
     // 파일 만들기 (FileWriter() 사용)
@@ -48,7 +52,7 @@ public class DrawDiamond {
 
     // printShape()
     public void printShape(int h) {
-        for (int i = 0; i < h; i++) makeALine(h, i);
+        for (int i = 0; i < h; i++) System.out.printf("%s",makeALine(h, i));;
     }
 
     public static void main(String[] args) throws IOException {
