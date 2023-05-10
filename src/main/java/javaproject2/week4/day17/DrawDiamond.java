@@ -19,6 +19,6 @@ public class DrawDiamond extends ShapeDrawer2 {
     public static void main(String[] args) throws IOException {
         DrawDiamond dd = new DrawDiamond();
         dd.printShape(7);
-        dd.makeAFile(7);
+        dd.makeAFile(7, "Diamond");
     }
 }

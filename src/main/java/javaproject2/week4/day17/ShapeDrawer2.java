@@ -6,22 +6,12 @@ import java.io.IOException;
 // 추상 클래스
 public abstract class ShapeDrawer2 {
     public void printShape(int height) {
-        for (int i = 0; i < height; i++) {
-            System.out.printf(makeALine(height, i));
-        }
+        for (int i = 0; i < height; i++) System.out.printf(makeALine(height, i));
     }
 
-    public void makeAFile(int h) throws IOException {
-        FileWriter writer = new FileWriter("output.txt");
-        int pivot = h / 2;
-
-        for (int i = 0; i < h; i++) {
-            if(i <= pivot){
-                writer.write(getRepeatedSymbol(" ", -2 + h - i - 2) + getRepeatedSymbol("*", 2 * i + 1) + "\n");
-            } else {
-                writer.write(getStringBuilder(" ", i - pivot) + getStringBuilder("*", 2 * (h - i) - 1) + "\n");
-            }
-        }
+    public void makeAFile(int h, String name) throws IOException {
+        FileWriter writer = new FileWriter(name + ".txt");
+        for (int i = 0; i < h; i++) writer.write(makeALine(h, i));
         writer.close();
     }
 
