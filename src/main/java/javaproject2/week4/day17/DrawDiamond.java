@@ -19,14 +19,12 @@ public class DrawDiamond {
     }
 
     // 한 줄 출력(다시 만들어야 할 듯) 한 줄 출력이 아닌데?
-    public static void makeALine(int h) {
+    public static void makeALine(int h, int i) {
         int pivot = h / 2;
-        for (int i = 0; i < h; i++) {
-            if(i <= pivot){
-                System.out.printf("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
-            } else {
-                System.out.printf("%s%s\n", getStringBuilder(" ", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
-            }
+        if(i <= pivot){
+            System.out.printf("%s%s\n", getRepeatedSymbol(" ", -2 + h - i - 2), getRepeatedSymbol("*", 2 * i + 1));
+        } else {
+            System.out.printf("%s%s\n", getStringBuilder(" ", i - pivot), getStringBuilder("*", 2 * (h - i) - 1));
         }
     }
 
@@ -47,7 +45,7 @@ public class DrawDiamond {
 
     public static void main(String[] args) throws IOException {
         int h = 7;
-        makeALine(h);
+        for (int i = 0; i < h; i++) makeALine(h, i);
         makeAFile(h);
     }
 }
