@@ -1,12 +1,10 @@
 package javaproject2.week4.day16;
 
-public class MaxMinEx {
+public class MaxMinEx extends MaxandMinOpr{
     public static void main(String[] args) {
-        MaxOpr maxOpr = new MaxOpr();
-        MinOpr minOpr = new MinOpr();
+        MaxMinEx mme = new MaxMinEx();
 
-        maxOpr.printbool(50, 30); // 50 > 30 --> true
-        minOpr.printbool(50, 30); // 50 < 30 --> false
-
+        mme.MaxOpr(50, 30); // 50 > 30 --> true
+        mme.MinOpr(50, 30); // 50 < 30 --> false
     }
 }

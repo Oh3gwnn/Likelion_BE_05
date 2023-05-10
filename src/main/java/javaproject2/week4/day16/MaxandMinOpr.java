@@ -1,13 +1,15 @@
 package javaproject2.week4.day16;
 
 public abstract class MaxandMinOpr {
-    public void printbool(int num1, int num2) {
-        System.out.println(MaxandMin(num1, num2));
+    public void printbool(boolean maxmin) {
+        System.out.println(maxmin);
     }
 
-    public abstract boolean MaxandMin(int num1, int num2);
+    public void MaxOpr(int num1, int num2) {
+        printbool(num1 > num2);
+    }
 
-
-
-
+    public void MinOpr(int num1, int num2) {
+        printbool(num1 < num2);
+    }
 }
