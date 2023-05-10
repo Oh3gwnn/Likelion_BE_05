@@ -23,7 +23,7 @@ public class DrawDiamond extends ShapeDrawer {
     }
 
     // 3. 한 줄 출력(String 형식으로 리턴)
-    // ShapeDrawer() 추상화
+    // ShapeDrawer() 추상화 --> printShape() 사용 가능
     @Override
     public String makeALine(int h, int i) {
         int pivot = h / 2;
@@ -36,12 +36,7 @@ public class DrawDiamond extends ShapeDrawer {
         return str;
     }
 
-    // 4. printShape() --> 반복문과 출력부문 메소드
-    public void printShape(int h) {
-        for (int i = 0; i < h; i++) System.out.printf("%s",makeALine(h, i));;
-    }
-
-    // 5. 파일 만들기 (FileWriter() 사용)
+    // 4. 파일 만들기 (FileWriter() 사용)
     public void makeAFile(int h) throws IOException {
         FileWriter writer = new FileWriter("output.txt");
         int pivot = h / 2;
