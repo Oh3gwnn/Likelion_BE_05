@@ -1,4 +1,4 @@
-package javaproject2.week4.day18;
+package javaproject2.week4.hospitalparsing;
 
 public class Hospital {
     private String name;
