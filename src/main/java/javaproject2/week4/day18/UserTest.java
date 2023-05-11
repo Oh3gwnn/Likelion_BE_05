@@ -1,4 +1,5 @@
 package javaproject2.week4.day18;
+import javaproject2.week4.day15.User;
 
 public class UserTest {
     public static void main(String[] args) {

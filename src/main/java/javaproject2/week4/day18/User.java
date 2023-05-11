@@ -1,6 +1,13 @@
 package javaproject2.week4.day18;
 
 public class User {
+
+    public User(String name, String phoneNumber, int age) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.age = age;
+    }
+
     public String getName() {
         return name;
     }
@@ -32,5 +39,4 @@ public class User {
     boolean isAdult() {
         return age >= 18;
     }
-
 }
