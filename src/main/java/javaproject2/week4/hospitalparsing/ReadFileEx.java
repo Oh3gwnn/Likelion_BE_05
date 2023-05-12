@@ -1,12 +1,29 @@
 package javaproject2.week4.hospitalparsing;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.List;
 
 public class ReadFileEx {
+    GetLines getlines;
+
+    public ReadFileEx(GetLines getlines) {
+        this.getlines = getlines;
+    }
+
+    public void PrintFile(List<String> lines) {
+        for (int i = 0; i < 9; i++) System.out.println(lines.get(i));
+    }
+
+    public void SelcetReader(int num, String fileName) throws IOException {
+        switch (num) {
+            case 1 -> PrintFile(getlines.BufferedReaderFile(fileName));
+            case 2 -> PrintFile(getlines.BufferedReader2File(fileName));
+            case 3 -> PrintFile(getlines.InputStreamReaderFile(fileName));
+        }
+    }
+
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("./hospital_info_2210.csv"));
-        System.out.println(br.readLine());
+        ReadFileEx rfe = new ReadFileEx(new ReaderFile());
+        rfe.SelcetReader(1, "hospital_info_2210.csv");
     }
 }
