@@ -5,13 +5,10 @@ import java.util.List;
 
 public class ReadFileEx {
     GetLines getlines;
-
-    public ReadFileEx(GetLines getlines) {
-        this.getlines = getlines;
-    }
+    public ReadFileEx(GetLines getlines) { this.getlines = getlines; }
 
     public void PrintFile(List<String> lines) {
-        for (int i = 0; i < 9; i++) System.out.println(lines.get(i));
+        for (int i = 0; i < 3; i++) System.out.println(lines.get(i));
     }
 
     public void SelcetReader(int num, String fileName) throws IOException {
@@ -25,5 +22,7 @@ public class ReadFileEx {
     public static void main(String[] args) throws IOException {
         ReadFileEx rfe = new ReadFileEx(new ReaderFile());
         rfe.SelcetReader(1, "hospital_info_2210.csv");
+        rfe.SelcetReader(2, "hospital_info_2210.csv");
+        rfe.SelcetReader(3, "hospital_info_2210.csv");
     }
 }
