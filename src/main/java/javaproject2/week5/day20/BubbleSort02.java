@@ -10,6 +10,10 @@ public class BubbleSort02 {
         this.comparator = comparator;
     }
 
+    public int compare(Integer o1, Integer o2) {
+        return o2 - o1;
+    }
+
     private int[] sortARound(int[] arr, int untll) {
         for (int i = 0; i < untll; i++) {
             if(comparator.compare(arr[i], arr[i + 1]) > 0) {
@@ -29,13 +33,14 @@ public class BubbleSort02 {
     }
 
     public static void main(String[] args) {
-        // 내림차순
         BubbleSort02 bs = new BubbleSort02((o1, o2) -> o2 - o1);
-        // 오름차순
         BubbleSort02 bs2 = new BubbleSort02(Comparator.comparingInt(o -> o));
         int[] arr = {7, 2, 3 ,9 ,21 ,28, 11, 1};
 
-        System.out.println(Arrays.toString(bs.sort(arr)));
-        System.out.println(Arrays.toString(bs2.sort(arr)));
+        arr = bs.sort(arr);
+        System.out.println(Arrays.toString(arr));
+
+        int[] arr2 = bs2.sort(arr);
+        System.out.println(Arrays.toString(arr2));
     }
 }
