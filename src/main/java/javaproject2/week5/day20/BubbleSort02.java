@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class BubbleSort02 {
-    public Comparator<Integer> comparator;
+    private Comparator<Integer> comparator;
 
     public BubbleSort02(Comparator<Integer> comparator) {
         this.comparator = comparator;
@@ -35,12 +35,17 @@ public class BubbleSort02 {
     public static void main(String[] args) {
         BubbleSort02 bs = new BubbleSort02((o1, o2) -> o2 - o1);
         BubbleSort02 bs2 = new BubbleSort02(Comparator.comparingInt(o -> o));
+        BubbleSort02 bs3 = new BubbleSort02(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o1 - o2; //오름차순 o2 - o1 내림차순
+            }
+        });
+
         int[] arr = {7, 2, 3 ,9 ,21 ,28, 11, 1};
 
-        arr = bs.sort(arr);
-        System.out.println(Arrays.toString(arr));
-
-        int[] arr2 = bs2.sort(arr);
-        System.out.println(Arrays.toString(arr2));
+        System.out.println(Arrays.toString(bs.sort(arr)));
+        System.out.println(Arrays.toString(bs2.sort(arr)));
+        System.out.println(Arrays.toString(bs3.sort(arr)));
     }
 }
