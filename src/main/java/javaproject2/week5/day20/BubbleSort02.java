@@ -29,14 +29,13 @@ public class BubbleSort02 {
     }
 
     public static void main(String[] args) {
+        // 내림차순
         BubbleSort02 bs = new BubbleSort02((o1, o2) -> o2 - o1);
+        // 오름차순
         BubbleSort02 bs2 = new BubbleSort02(Comparator.comparingInt(o -> o));
         int[] arr = {7, 2, 3 ,9 ,21 ,28, 11, 1};
 
-        arr = bs.sort(arr);
-        System.out.println(Arrays.toString(arr));
-
-        int[] arr2 = bs2.sort(arr);
-        System.out.println(Arrays.toString(arr2));
+        System.out.println(Arrays.toString(bs.sort(arr)));
+        System.out.println(Arrays.toString(bs2.sort(arr)));
     }
 }
