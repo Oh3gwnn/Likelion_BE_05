@@ -18,18 +18,16 @@ public class InsertionSort03<T extends Comparable> {
         return arr;
     }
 
-    private T[] sort(T[] arr) {
-        return sort(arr, true);
-    }
+    private T[] sort(T[] arr) { return sort(arr, true); }
 
     public static void main(String[] args) {
-        InsertionSort03<Integer> intis = new InsertionSort03();
-        InsertionSort03<Character> chis = new InsertionSort03();
+        InsertionSort03<Integer> intIs = new InsertionSort03();
+        InsertionSort03<Character> charIs = new InsertionSort03();
+
         Integer[] arr = {7, 2, 3, 9, 27, 11, 53, 1};
-        Character[] carr = {'a', 'e', 'z', 'e', 'b', 'q'};
-        intis.sort(arr);
-        chis.sort(carr);
-        System.out.println(Arrays.toString(arr));
-        System.out.println(Arrays.toString(carr));
+        Character[] carr = {'a', 'x', 'z', 'e', 'b', 'q'};
+
+        System.out.println(Arrays.toString(intIs.sort(arr)));
+        System.out.println(Arrays.toString(charIs.sort(carr, true)));
     }
 }
