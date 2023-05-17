@@ -1,6 +1,6 @@
 package javaproject2.week5.day22;
 
-import java.util.Stack;
+import java.util.Stack; // 그냥 Stack 클래스 가져다가 썼습니다.
 
 public class Stack02 {
     private boolean isNumber(char c) {
