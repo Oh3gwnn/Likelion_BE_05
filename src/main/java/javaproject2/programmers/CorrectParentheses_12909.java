@@ -12,7 +12,6 @@ public class CorrectParentheses_12909 {
                 if (st.isEmpty()) return false;
                 st.pop();
             }
-        }
-        return st.isEmpty();
+        } return st.isEmpty();
     }
 }
