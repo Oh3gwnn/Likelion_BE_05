@@ -6,19 +6,13 @@ import java.sql.*;
 // + 공부용으로 주석 너무 많이 달아서
 public class ConnectChecker_toPush {
 
-    // 주소를 전역변수로 빼버렸다.
-    // 여기선 localhost지만 원래코드에선 aws ec2 서버 주소이기 때문에 길었다.
-    class pathMysql{
-        static String path = "jdbc:mysql://localhost:3306/likelion-db";
-    }
-
     // 테이블 목록 조회
     public void check() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         // com.mysql.cj.jdbc.Driver()
         // MySQL 드라이버 로드를 위해 Class.forName() 사용
 
-        Connection con = DriverManager.getConnection(pathMysql.path, "user", "password");
+        Connection con = DriverManager.getConnection("path", "user", "password");
         // DriverManager.getConnection() 메서드를 사용하여 데이터베이스에 연결
 
         Statement st = con.createStatement();
@@ -41,7 +35,7 @@ public class ConnectChecker_toPush {
     // 데이터 추가
     public void add(String id, String name, String password) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(pathMysql.path, "root", "1234");
+        Connection con = DriverManager.getConnection("path", "user", "password");
 
         // PreparedStatement는 동일한 SQL 쿼리를 반복적으로 실행하거나
         // 사용자 입력과 같은 변수 데이터를 SQL 쿼리에 쉽게 삽입할 수 있다.
@@ -57,7 +51,7 @@ public class ConnectChecker_toPush {
     // select * from users
     public void select() throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(pathMysql.path, "root", "1234");
+        Connection con = DriverManager.getConnection("path", "user", "password");
 
         Statement st = con.createStatement();
         ResultSet rs = st.executeQuery("select * from users");
@@ -73,7 +67,7 @@ public class ConnectChecker_toPush {
     // tablename 테이블 생성
     public void createTable(String tablename) throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(pathMysql.path, "root", "1234");
+        Connection con = DriverManager.getConnection("path", "user", "password");
 
         PreparedStatement pstmt = con.prepareStatement("CREATE TABLE " + tablename + " (`id` VARCHAR(45) NOT NULL, " +
                 "`name` VARCHAR(45) NOT NULL, `password` VARCHAR(45) NOT NULL, PRIMARY KEY (`id`));");
@@ -84,7 +78,7 @@ public class ConnectChecker_toPush {
     // update문 (해당 id의 password 변경)
     public void updatePassword(String id, String changepass) throws SQLException, ClassNotFoundException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection con = DriverManager.getConnection(pathMysql.path, "root", "1234");
+        Connection con = DriverManager.getConnection("path", "user", "password");
 
         PreparedStatement pstmt = con.prepareStatement("UPDATE `users` SET `password` = " + changepass + " WHERE (`id` = "+ id +");");
         pstmt.executeUpdate();
@@ -92,7 +86,6 @@ public class ConnectChecker_toPush {
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
     ConnectChecker_toPush cc = new ConnectChecker_toPush();
-    cc.updatePassword("2", "7856");
     cc.select();
     }
 }
