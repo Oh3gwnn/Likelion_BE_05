@@ -2,41 +2,75 @@ package com.example.springbootdockerexercise.dao;
 
 import com.example.springbootdockerexercise.domain.User;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Map;
 
 import static java.lang.System.getenv;
 
 public class UserDao {
-    public void add() throws ClassNotFoundException, SQLException {
-        Map<String, String> env = getenv();
-        String dbHost = env.get("DB_HOST");
-        String dbUser = env.get("DB_USER");
-        String dbPass = env.get("DB_PASS");
 
+    private static Map<String, String> env = getenv();
+    static class Env {
+        static String dbHost = env.get("DB_HOST");
+        static String dbUser = env.get("DB_USER");
+        static String dbPass = env.get("DB_PASS");
+    }
+
+    private Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(
-                dbHost, dbUser, dbPass
-        );
-        PreparedStatement pstmt = conn.prepareStatement("insert into users(id, name, password) values(?, ?, ?)");
-        pstmt.setString(1, "id");
-        pstmt.setString(2, "name");
-        pstmt.setString(3, "password");
+        Connection conn = DriverManager.getConnection(Env.dbHost, Env.dbUser, Env.dbPass);
+        return conn;
+    }
+
+    public void add(User user) throws ClassNotFoundException, SQLException {
+        Connection conn = getConnection();
+
+        PreparedStatement pstmt = conn.prepareStatement("insert into `likelion-db`.users(id, name, password) values(?, ?, ?)");
+        pstmt.setString(1, user.getId());
+        pstmt.setString(2, user.getName());
+        pstmt.setString(3, user.getPassword());
 
         pstmt.executeUpdate();
         pstmt.close();
         conn.close();
     }
 
-    public User get() {
-        return new User();
+    public User get(String id) throws ClassNotFoundException, SQLException {
+        Connection conn = getConnection();
+
+        PreparedStatement pstmt = conn.prepareStatement("select * from `likelion-db`.users where id = ?");
+        pstmt.setString(1, id);
+
+        ResultSet rs = pstmt.executeQuery();
+        rs.next();
+        User user = new User();
+
+        user.setId(rs.getString("id"));
+        user.setName(rs.getString("name"));
+        user.setPassword(rs.getString("password"));
+
+        rs.close();
+        pstmt.close();
+        conn.close();
+
+        return user;
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao userDao = new UserDao();
-        userDao.add();
+        UserDao dao = new UserDao();
+
+        User user = new User();
+        user.setId("xor2");
+        user.setName("dlagudxor2");
+        user.setPassword("123123123");
+
+        dao.add(user);
+        System.out.println(user.getId() + " 등록 성공");
+
+        User user2 = dao.get(user.getId());
+        System.out.println(user2.getName());
+        System.out.println(user2.getPassword());
+        System.out.println(user.getId() + " 조회 성공");
+
     }
 }
