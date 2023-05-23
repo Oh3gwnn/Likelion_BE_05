@@ -1,4 +1,4 @@
-package com.example.springbootdockerexercise;
+package com.example.springbootdockerexercise.db;
 
 import java.sql.*;
 import java.util.Map;
