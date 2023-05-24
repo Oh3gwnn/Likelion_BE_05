@@ -7,7 +7,7 @@ import java.util.Map;
 
 import static java.lang.System.getenv;
 
-public class UserDao {
+public abstract class UserDao {
 
     private static Map<String, String> env = getenv();
     static class Env {
@@ -16,11 +16,7 @@ public class UserDao {
         static String dbPass = env.get("DB_PASS");
     }
 
-    private Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection(Env.dbHost, Env.dbUser, Env.dbPass);
-        return conn;
-    }
+    public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
 
     public void add(User user) throws ClassNotFoundException, SQLException {
         Connection conn = getConnection();
@@ -57,15 +53,15 @@ public class UserDao {
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao dao = new UserDao();
+        UserDao dao = new NUserDao();
 
         User user = new User();
         user.setId("xor2");
         user.setName("dlagudxor2");
         user.setPassword("123123123");
 
-        dao.add(user);
-        System.out.println(user.getId() + " 등록 성공");
+//        dao.add(user);
+//        System.out.println(user.getId() + " 등록 성공");
 
         User user2 = dao.get(user.getId());
         System.out.println(user2.getName());
