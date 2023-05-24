@@ -3,23 +3,13 @@ package com.example.springbootdockerexercise.dao;
 import com.example.springbootdockerexercise.domain.User;
 
 import java.sql.*;
-import java.util.Map;
 
-import static java.lang.System.getenv;
+public class UserDao {
 
-public abstract class UserDao {
-
-    private static Map<String, String> env = getenv();
-    static class Env {
-        static String dbHost = env.get("DB_HOST");
-        static String dbUser = env.get("DB_USER");
-        static String dbPass = env.get("DB_PASS");
-    }
-
-    public abstract Connection getConnection() throws ClassNotFoundException, SQLException;
+    SimpleConnectionMaker connectionMaker = new SimpleConnectionMaker();
 
     public void add(User user) throws ClassNotFoundException, SQLException {
-        Connection conn = getConnection();
+        Connection conn = connectionMaker.makeNewConnection();
 
         PreparedStatement pstmt = conn.prepareStatement("insert into `likelion-db`.users(id, name, password) values(?, ?, ?)");
         pstmt.setString(1, user.getId());
@@ -32,7 +22,7 @@ public abstract class UserDao {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Connection conn = getConnection();
+        Connection conn = connectionMaker.makeNewConnection();
 
         PreparedStatement pstmt = conn.prepareStatement("select * from `likelion-db`.users where id = ?");
         pstmt.setString(1, id);
@@ -53,7 +43,7 @@ public abstract class UserDao {
     }
 
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
-        UserDao dao = new NUserDao();
+        UserDao dao = new UserDao();
 
         User user = new User();
         user.setId("xor2");
@@ -63,9 +53,9 @@ public abstract class UserDao {
 //        dao.add(user);
 //        System.out.println(user.getId() + " 등록 성공");
 
-        User user2 = dao.get(user.getId());
-        System.out.println(user2.getName());
-        System.out.println(user2.getPassword());
+        User selectedUser = dao.get(user.getId());
+        System.out.println(selectedUser.getName());
+        System.out.println(selectedUser.getPassword());
         System.out.println(user.getId() + " 조회 성공");
 
     }
