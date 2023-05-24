@@ -5,11 +5,14 @@ import com.example.springbootdockerexercise.domain.User;
 import java.sql.*;
 
 public class UserDao {
+    private ConnectionMaker connectionMaker;
 
-    SimpleConnectionMaker connectionMaker = new SimpleConnectionMaker();
+    public UserDao() {
+        this.connectionMaker = new NConnectionMaker();
+    }
 
     public void add(User user) throws ClassNotFoundException, SQLException {
-        Connection conn = connectionMaker.makeNewConnection();
+        Connection conn = connectionMaker.makeConnection();
 
         PreparedStatement pstmt = conn.prepareStatement("insert into `likelion-db`.users(id, name, password) values(?, ?, ?)");
         pstmt.setString(1, user.getId());
@@ -22,7 +25,7 @@ public class UserDao {
     }
 
     public User get(String id) throws ClassNotFoundException, SQLException {
-        Connection conn = connectionMaker.makeNewConnection();
+        Connection conn = connectionMaker.makeConnection();
 
         PreparedStatement pstmt = conn.prepareStatement("select * from `likelion-db`.users where id = ?");
         pstmt.setString(1, id);
