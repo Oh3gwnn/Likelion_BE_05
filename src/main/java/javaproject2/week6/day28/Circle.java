@@ -7,13 +7,13 @@ public class Circle implements Shape {
         this.radius = radius;
     }
 
-    final double pi = 3.14;
+    final double PI = 3.14159;
 
     public double calculateArea() {
-        return pi * radius * radius;
+        return PI * radius * radius;
     }
 
     public double calculatePerimeter() {
-        return pi * 2 * radius;
+        return PI * 2 * radius;
     }
 }
