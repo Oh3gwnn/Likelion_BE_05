@@ -3,7 +3,7 @@ package com.example.tutoopjdbc.model;
 import java.sql.SQLException;
 
 public class CountryDAO extends BaseDAO {
-    public void gatCodeName() {
+    public void getCodeName() {
         String sql = "select code, name from country order by code, name";
         try {
             getConn();

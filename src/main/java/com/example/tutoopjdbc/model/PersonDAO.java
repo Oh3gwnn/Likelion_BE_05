@@ -3,8 +3,30 @@ package com.example.tutoopjdbc.model;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class PersonDAO extends BaseDAO {
+    public Optional<Person> findByNamePerson(String pname) {
+        String sql = "select id, name from person where name=?";
+        try {
+            getConn();
+            psmt = conn.prepareStatement(sql);
+            psmt.setString(1, pname);
+            rs = psmt.executeQuery();
+            if ( rs.next() ) {
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
+                return Optional.of(new Person(id, name));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            close();
+        }
+        return Optional.empty();
+    }
+
+
     public List<Person> findAllPerson() {
         List<Person> result = new ArrayList<>();
         String sql = "select id, name from person";
