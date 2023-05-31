@@ -15,7 +15,7 @@ public class DBMain extends BaseDAO {
 
     private void initPerson() {
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:world.db");
+            getConn();
             smt = conn.createStatement();
             smt.setQueryTimeout(30);  // set timeout to 30 sec.
 
@@ -40,7 +40,7 @@ public class DBMain extends BaseDAO {
     private void gatCodeName() {
         String sql = "select code, name from country order by code, name";
         try {
-            conn = DriverManager.getConnection("jdbc:sqlite:world.db");
+            getConn();
             psmt = conn.prepareStatement(sql);
             rs = psmt.executeQuery();
             while( rs.next() ) {
