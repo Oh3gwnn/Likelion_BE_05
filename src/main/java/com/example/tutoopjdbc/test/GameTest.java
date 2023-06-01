@@ -1,9 +1,11 @@
 package com.example.tutoopjdbc.test;
 
 import com.example.tutoopjdbc.service.OpGame;
+import com.example.tutoopjdbc.service.PlusOperatorLevelOne;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 /**
  * @author jun
@@ -16,9 +18,10 @@ import static org.junit.Assert.assertEquals;
  * **/
 public class GameTest {
 
+
     @Test
     public void test() {
-        OpGame game = new OpGame();
+        OpGame game = new OpGame(new PlusOperatorLevelOne());
         game.makeQuestion();
         String question = game.getQuestion();
 
@@ -29,5 +32,14 @@ public class GameTest {
         assertEquals("한번 더 해보자", game.getCheeringUpMsg());
         assertEquals(true, game.isAnswer(2));
 
+    }
+
+    @Test
+    public void testSumMax() {
+        int max = 10;
+        int a = (int)(Math.random() * max);
+        int b = (int)(Math.random() * (max - a));
+        System.out.printf("%d + %d = %d", a, b, a+b);
+        assertTrue(a + b < 10);
     }
 }
