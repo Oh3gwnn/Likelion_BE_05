@@ -1,12 +1,19 @@
 package com.example.tutoopjdbc.model;
 
 public class Member {
-    public String getID() {
-        return null;
+    String id;
+    boolean isLogined;
+
+    public Member(String id, boolean isLogined) {
+        this.id = id;
+        this.isLogined = isLogined;
     }
 
+    public String getID() {
+        return id;
+    }
 
     public boolean isLogined() {
-        return false;
+        return isLogined;
     }
 }
