@@ -42,4 +42,13 @@ public class GameTest {
         System.out.printf("%d + %d = %d", a, b, a+b);
         assertTrue(a + b < 10);
     }
+
+    @Test
+    public void testMinMax() {
+        int max = 10;
+        int a = (int)(Math.random() * (max-1) + 1);
+        int b = (int)(Math.random() * a);
+        System.out.printf("%d - %d = %d", a, b, a-b);
+        assertTrue(a - b >= 0);
+    }
 }
