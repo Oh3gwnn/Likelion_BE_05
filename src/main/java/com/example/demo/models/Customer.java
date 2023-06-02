@@ -14,9 +14,7 @@ public class Customer {
     private String firstName;
     private String lastName;
 
-    public Customer() {
-
-    }
+    protected Customer() { }
 
     public Long getId() {
         return id;
