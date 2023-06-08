@@ -20,4 +20,8 @@ public class StudentService {
         studentDTO.add(newStudent);
         return newStudent;
     }
+
+    public List<StudentDto> readStudentAll() {
+        return studentDTO;
+    }
 }
