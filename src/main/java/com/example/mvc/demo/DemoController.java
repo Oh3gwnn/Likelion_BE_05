@@ -8,21 +8,21 @@ public class DemoController {
 
     @RequestMapping("home")
     public String home() {
-        return "demohome";
+        return "demo/demohome";
     }
 
     @RequestMapping("/")
     public String reDirect() {
-        return "home";
+        return "demo/demohome";
     }
 
     @RequestMapping("profile")
     public String profile() {
-        return "profile";
+        return "demo/profile";
     }
 
     @RequestMapping("blog")
     public String blog() {
-        return "blog";
+        return "demo/blog";
     }
 }
