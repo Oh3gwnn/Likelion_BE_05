@@ -17,7 +17,7 @@ public class MvcController {
     @RequestMapping("/")
     public String home(Model model) {
         model.addAttribute( "message", "Hello, Thymeleaf!" );
-        return "home";
+        return "/mvc/home";
     }
 
     @RequestMapping("/student")
@@ -26,13 +26,13 @@ public class MvcController {
                 "obj",
                 new Student("Kim", "asdf@asdf.com")
         );
-        return "student";
+        return "/mvc/student";
     }
 
     @RequestMapping("/is-logged-in")
     public String isLoggedIn(Model model) {
         model.addAttribute("isLoggedIn", true );
-        return "if-unless";
+        return "/mvc/if-unless";
     }
 
     @RequestMapping("/each")
@@ -51,13 +51,13 @@ public class MvcController {
 
         model.addAttribute("studentList", studentList);
 
-        return "each";
+        return "/mvc/each";
     }
 
     @RequestMapping("/hits")
     public String hits(Model model) {
         model.addAttribute("hits", ++hitCount);
-        return "hits";
+        return "/mvc/hits";
     }
 
     @RequestMapping("/lotto")
@@ -68,7 +68,7 @@ public class MvcController {
         }
         listOfLotto.add(listOfNums.toString());
         model.addAttribute("listOfNums", listOfNums);
-        return "lotto";
+        return "/mvc/lotto";
     }
 
     @RequestMapping("/history")
@@ -78,6 +78,6 @@ public class MvcController {
         else isHistory = false;
         model.addAttribute("listOfLotto", listOfLotto);
         model.addAttribute("isHistory", isHistory);
-        return "history";
+        return "/mvc/history";
     }
 }

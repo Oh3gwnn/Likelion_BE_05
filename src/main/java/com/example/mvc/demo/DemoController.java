@@ -11,11 +11,6 @@ public class DemoController {
         return "demo/demohome";
     }
 
-    @RequestMapping("/")
-    public String reDirect() {
-        return "demo/demohome";
-    }
-
     @RequestMapping("profile")
     public String profile() {
         return "demo/profile";
