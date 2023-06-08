@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+<body>
+  <div>
+    <h2>Lotto List</h2>
+    <div th:if="${isHistory}">
+    <p th:each="item: ${listOfLotto}">[[${item}]]</p>
+    </div>
+    <div th:unless="${isHistory}"><p>아직 기록이 없습니다.</p></div>
+  </div>
+    <a href="/hits">돌아가기</a>
+</body>
+</html>
