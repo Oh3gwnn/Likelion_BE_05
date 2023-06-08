@@ -1,4 +1,4 @@
-package com.example.mvc.temp;
+package com.example.mvc.demo;
 
 import java.util.Arrays;
 
