@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+</head>
+<body>
+  <h1>Update Student</h1>
+  <form method="post">
+    <label for="name-input">
+      Name: <input id="name-input" name="name">
+    </label> <br>
+    <label for="email-input">
+      Email: <input id="email-input" name="email">
+    </label> <br>
+    <input type="submit">
+  </form>
+  <a th:href="@{/{id} (id=${student.id})}">Back</a>
+</body>
+</html>

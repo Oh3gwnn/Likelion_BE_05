@@ -54,4 +54,16 @@ public class CrudController {
         );
         return "crud/read";
     }
+
+    @GetMapping("/{id}/edit")
+    public String updateView(
+            @PathVariable("id") Long id,
+            Model model) {
+
+        model.addAttribute(
+                "student",
+                studentService.readStudent(id)
+        );
+        return "crud/update";
+    }
 }

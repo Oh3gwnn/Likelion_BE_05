@@ -12,7 +12,7 @@
   <div th:unless="${studentDTO.isEmpty()}"
        th:each="student: ${studentDTO}">
     <p>번호: [[${student.id}]]</p>
-    <p>이름: [[${student.name}]]</p>
+    <p><a th:href="@{/{id} (id=${student.id})}">이름: [[${student.name}]]</a></p>
     <p>이메일: [[${student.email}]]</p>
     <hr>
   </div>
