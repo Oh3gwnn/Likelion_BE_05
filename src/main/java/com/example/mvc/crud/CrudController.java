@@ -88,4 +88,9 @@ public class CrudController {
         return "crud/delete";
     }
 
+    @PostMapping("/{id}/delete")
+    public String delete(@PathVariable("id") Long id) {
+        studentService.deleteStudent(id);
+        return "redirect:/crudhome";
+    }
 }

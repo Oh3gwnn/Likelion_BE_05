@@ -61,4 +61,19 @@ public class StudentService {
 //                .findFirst()
 //                .orElse(null);
     }
+
+    public boolean deleteStudent(Long id) {
+        int target = -1;
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getId().equals(id)) {
+                target = i;
+                break;
+            }
+        }
+        if (target != -1) {
+            studentList.remove(target);
+            return true;
+        }
+        else return false;
+    }
 }
