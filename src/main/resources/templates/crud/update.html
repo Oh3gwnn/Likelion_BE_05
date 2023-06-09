@@ -7,11 +7,11 @@
 <body>
   <h1>Update Student</h1>
   <form th:action="@{/{id}/update(id=${student.id})}" method="post">
-    <label for="name-input">
-      Name: <input id="name-input" name="name">
+    <label for="name">
+      Name: <input id="name" name="name" th:value="${student.name}">
     </label> <br>
-    <label for="email-input">
-      Email: <input id="email-input" name="email">
+    <label for="email">
+      Email: <input id="email" name="email" th:value="${student.email}">
     </label> <br>
     <input type="submit">
   </form>
