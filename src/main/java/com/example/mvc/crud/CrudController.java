@@ -43,4 +43,13 @@ public class CrudController {
         );
         return "crud/crudhome";
     }
+
+    @GetMapping("/read")
+    public String read(Long id, Model model) {
+        model.addAttribute(
+                "student",
+                studentService.readStudent(id)
+        );
+        return "crud/read";
+    }
 }
