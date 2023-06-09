@@ -8,6 +8,7 @@
     <h1>[[${student.id}]]. [[${student.name}]]</h1>
     <p>이메일: [[${student.email}]]</p>
     <a href="/crudhome">Back</a>
-    <a th:href="@{/{id}/edit(id=${student.id})}">Edit</a>
+    <a th:href="@{/{id}/edit (id=${student.id})}">Edit</a>
+    <a th:href="@{/{id}/delete-view (id=${student.id})}">Delete</a>
 </body>
 </html>
