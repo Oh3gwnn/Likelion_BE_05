@@ -74,7 +74,8 @@ public class CrudController {
             @PathVariable("id") Long id,
             @RequestParam("name") String name,
             @RequestParam("email") String email) {
-        StudentDto studentDto = studentService.updateStudent(id, name, email);
-        return String.format("redirect:/%s", id);
+        StudentDto studentDto
+                = studentService.updateStudent(id, name, email);
+        return "redirect:/{id}";
     }
 }
