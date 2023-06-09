@@ -14,11 +14,11 @@ public class MvcController {
     private int hitCount = 0;
     private List<String> listOfLotto = new ArrayList<>();
 
-    @RequestMapping("/")
-    public String home(Model model) {
-        model.addAttribute( "message", "Hello, Thymeleaf!" );
-        return "/mvc/home";
-    }
+//    @RequestMapping("/")
+//    public String home(Model model) {
+//        model.addAttribute( "message", "Hello, Thymeleaf!" );
+//        return "/mvc/home";
+//    }
 
     @RequestMapping("/student")
     public String student(Model model) {

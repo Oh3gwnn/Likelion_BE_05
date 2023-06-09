@@ -3,10 +3,7 @@ package com.example.mvc.crud;
 import com.example.mvc.model.StudentDto;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class CrudController {
@@ -43,6 +40,11 @@ public class CrudController {
                 studentService.readStudentAll()
         );
         return "crud/crudhome";
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "redirect:/crudhome";
     }
 
     @GetMapping("/{id}") // {} <- 특정 아이디를 가져오게끔 설정
