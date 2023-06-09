@@ -36,4 +36,29 @@ public class StudentService {
 //                .findFirst()
 //                .orElse(null);
     }
+
+    public StudentDto updateStudent(Long id, String name, String email) {
+        int target = -1;
+        for (int i = 0; i < studentList.size(); i++) {
+            if (studentList.get(i).getId().equals(id)) {
+                target = i;
+                break;
+            }
+        }
+        if (target != -1) {
+            studentList.get(target).setName(name);
+            studentList.get(target).setEmail(email);
+            return studentList.get(target);
+        }
+        else return null;
+
+//                .stream()
+//                .filter(studentDto -> studentDto.getId().equals(id))
+//                .peek(studentDto -> {
+//                    studentDto.setName(name);
+//                    studentDto.setEmail(email);
+//                })
+//                .findFirst()
+//                .orElse(null);
+    }
 }
