@@ -22,7 +22,7 @@ public class ParTest {
             else if (next == ')') {
                 if (charStack.empty()) return false;
                 char top = charStack.pop();
-                if (top == '(') return true;
+                if (top != '(') return false;
             }
         }
 
