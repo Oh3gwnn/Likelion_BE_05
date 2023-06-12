@@ -22,6 +22,12 @@ public class MyStack {
         return arr[top--];
     }
 
+    // 3. PEEK
+    public int peek() {
+        if (top == -1) throw new RuntimeException("STACK EMPTY");
+        return arr[top];
+    }
+
     public static void main(String[] args) {
         MyStack st = new MyStack();
         st.push(2);
