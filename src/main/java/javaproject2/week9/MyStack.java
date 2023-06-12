@@ -28,6 +28,11 @@ public class MyStack {
         return arr[top];
     }
 
+    // 4. EMPTY
+    public boolean empty() {
+        return top == -1;
+    }
+
     public static void main(String[] args) {
         MyStack st = new MyStack();
         st.push(2);
