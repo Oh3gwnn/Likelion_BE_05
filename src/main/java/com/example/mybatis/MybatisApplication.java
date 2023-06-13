@@ -26,23 +26,23 @@ public class MybatisApplication {
 //		System.out.println(dao.readStudentsAll());
 
 		// SELECT ONE
-		System.out.println(dao.readStudent(1L));
-		System.out.println(dao.readStudent(2L));
-		System.out.println(dao.readStudent(3L));
+//		System.out.println(dao.readStudent(1L));
+//		System.out.println(dao.readStudent(2L));
+//		System.out.println(dao.readStudent(3L));
 
 		// UPDATE
-		Student student2 = new Student();
-		student2.setId(2L);
-		student2.setName("gaven");
-		student2.setAge(42);
-		student2.setPhone("031-5223-6415");
-		student2.setEmail("gaven@gmail.com");
-		dao.updateStudent(student2);
-		System.out.println(dao.readStudentsAll());
+//		Student student2 = new Student();
+//		student2.setId(2L);
+//		student2.setName("gaven");
+//		student2.setAge(42);
+//		student2.setPhone("031-5223-6415");
+//		student2.setEmail("gaven@gmail.com");
+//		dao.updateStudent(student2);
+//		System.out.println(dao.readStudentsAll());
 
 		// DELETE
-		dao.deleteStudent(6L);
-		System.out.println(dao.readStudentsAll());
+//		dao.deleteStudent(6L);
+//		System.out.println(dao.readStudentsAll());
 	}
 
 }
