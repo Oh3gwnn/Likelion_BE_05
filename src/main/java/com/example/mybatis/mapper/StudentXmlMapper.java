@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface StudentXmlMapper {
     List<Student> selectStudentAll();
+    Student selectStudentOne(Long id);
 }

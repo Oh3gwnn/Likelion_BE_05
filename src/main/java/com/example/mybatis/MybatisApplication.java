@@ -26,9 +26,9 @@ public class MybatisApplication {
 //		System.out.println(dao.readStudentsAll());
 
 		// SELECT ONE
-//		System.out.println(dao.readStudent(1L));
-//		System.out.println(dao.readStudent(2L));
-//		System.out.println(dao.readStudent(3L));
+		System.out.println(dao.readStudent(1L));
+		System.out.println(dao.readStudent(2L));
+		System.out.println(dao.readStudent(3L));
 
 		// UPDATE
 //		Student student2 = new Student();
@@ -41,7 +41,7 @@ public class MybatisApplication {
 //		System.out.println(dao.readStudentsAll());
 
 		// DELETE
-//		dao.deleteStudent(6L);
+//		dao.deleteStudent(1L);
 //		System.out.println(dao.readStudentsAll());
 	}
 

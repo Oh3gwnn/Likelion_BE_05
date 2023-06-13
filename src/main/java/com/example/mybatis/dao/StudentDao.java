@@ -37,8 +37,13 @@ public class StudentDao {
 
     public Student readStudent(Long id) {
         try (SqlSession session = sessionFactory.openSession()) {
-            StudentMapper studentMapper = session.getMapper(StudentMapper.class);
-            return studentMapper.selectStudent(id);
+            // Student Mapper - Annotation
+//            StudentMapper studentMapper = session.getMapper(StudentMapper.class);
+//            return studentMapper.selectStudent(id);
+
+            // Student Mapper - XML
+            StudentXmlMapper studentXmlMapper = session.getMapper(StudentXmlMapper.class);
+            return studentXmlMapper.selectStudentOne(id);
         }
     }
 
