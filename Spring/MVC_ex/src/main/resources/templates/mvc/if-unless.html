@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>If Unless</title>
+</head>
+<body>
+  <div th:if="${isLoggedIn}">
+    <!--로그인 O-->
+    <p>You are logged in.</p>
+  </div>
+  <div th:unless="${isLoggedIn}">
+    <!--로그인 X-->
+    <p>Please log in.</p>
+  </div>
+</body>
+</html>
