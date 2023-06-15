@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>기념일 계산기</title>
+  <style>
+    * {
+      color: #333333;
+    }
+    p {
+      margin-bottom: 1px;
+    }
+    .photos {
+      margin-top: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #chunsik {
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-right: 30px;
+    }
+    #rion {
+      width:150px;
+      height:150px;
+      object-fit:cover;
+      border-radius:50%;
+      margin-left: 30px;
+    }
+    #heart {
+      width:50px;
+      height:50px;
+    }
+    .gray {
+      color: #a0a0a0;
+    }
+    .special-day {
+      display: flex;
+      justify-content: space-between;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+    }
+    .days-left {
+      text-align: right;
+    }
+    .date {
+      text-align: right;
+      color: #a0a0a0;
+    }
+  </style>
+</head>
+<body class="container">
+<section class='photos'>
+  <img id='chunsik' src="img/chunsik.jpg" alt="chunsik">
+  <img id='heart' src="img/heart.png" alt="heart">
+  <img id='rion' src="img/rion.jpg" alt="rion">
+</section>
+<div class='container d-flex flex-column justify-content-center align-items-center mt-3'>
+  <h3>춘식 ♥ 라이언</h3>
+  <h3 id='love'>0일째</h3>
+  <h4 class="date">2020.7.21</h4>
+</div>
+<hr/>
+<section class='special-day'>
+  <h3 class='title'>3주년</h3>
+  <div class='date-box'>
+    <p id='Third' class='days-left'>0일 남음</p>
+    <p id='Third-date' class='date'>0000.00.00</p>
+  </div>
+</section>
+<hr/>
+<section class='special-day'>
+  <h3 class='title'>크리스마스</h3>
+  <div class='date-box'>
+    <p id='Christmas' class='days-left'>0일 남음</p>
+    <p class='date'>2023.12.25</p>
+  </div>
+</section>
+<hr/>
+<section class='special-day'>
+  <h3 class='title'>발렌타인 데이</h3>
+  <div class='date-box'>
+    <p id='Valentine' class='days-left'>0일 남음</p>
+    <p class='date'>2024.2.14</p>
+  </div>
+</section>
+<hr/>
+<script
+        src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+        crossorigin="anonymous"></script>
+<script>
+  // 1. Date 생성
+  var now = new Date();
+  var start = new Date('2020-06-30');
+
+  // 2. Dday 계산
+  var timeDiff = now.getTime() - start.getTime();
+  var day = Math.floor(timeDiff / (1000 * 60 * 60 * 24) + 1);
+  $('#love').text(day + '일째');
+
+  // 3. 크리스마스까지
+  var Christmas = new Date('2023-12-25');
+  var timeDiff2 = Christmas.getTime() - now.getTime();
+  var day2 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24) + 1);
+  $('#Christmas').text('Dday '+ -day2);
+
+  // 4. 발렌타인까지
+  var Valentine = new Date('2024-02-14');
+  var timeDiff2 = Valentine.getTime() - now.getTime();
+  var day3 = Math.floor(timeDiff2 / (1000 * 60 * 60 * 24) + 1);
+  $('#Valentine').text('Dday '+ -day3);
+
+  // 5. 3주년
+  var Third = new Date(start.getTime() + 1094 * (1000 * 60 * 60 * 24));
+  var ThirdDate = Third.getFullYear() + '.' + (Third.getMonth()+1) + '.' + Third.getDate();
+  $('#Third-date').text(ThirdDate);
+
+  // 6. 3주년까지 남은 날짜
+  var timeDiff3 = Third.getTime() - now.getTime();
+  var day4 = Math.floor(timeDiff3 / (1000 * 60 * 60 * 24) + 1);
+  $('#Third').text('Dday '+ -day4);
+</script>
+</body>
+</html>
