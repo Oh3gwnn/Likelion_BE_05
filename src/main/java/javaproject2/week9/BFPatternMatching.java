@@ -32,15 +32,9 @@ public class BFPatternMatching {
             patIdx += 1;
         }
         // TODO patIdx == pattern.length() 이면 성공 -> 어디에서 찾았는지 출력.
-        if (patIdx == pattern.length()) {
-            foundAt.add(tarIdx - patIdx);
-            tarIdx = tarIdx - patIdx + 1;
-            patIdx = 0;
-        }
+        if (patIdx == pattern.length()) System.out.println(tarIdx - patIdx);
         // TODO 못찾으면 System.out.println("404 Not Found");
-        else {
-            System.out.println("404 Not Found");
-        }
+        else System.out.println("404 Not Found");
     }
 
 
