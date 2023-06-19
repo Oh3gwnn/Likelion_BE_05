@@ -1,20 +1,22 @@
 # Likelion_BE_05
 ---
 
+## Subtree Code
 ```
-git subtree add --prefix=*old_repo* *https:// ~.git* main
+git subtree add --prefix=old_repo https:// ~.git main
 ```
-
+`old_repo` -> 합쳤을 때 폴더 구조
+https:// ~.git -> 합치고 싶은 repository의 git 주소
+## Folder structure.
 ```markdown
-# Folder structure.
 ├─ Likelion_BE_05
-│ 	├─ Java
-│ 		├─ blog_ex
-│ 		├─ java_ex
-│ 	├─ Spring
-│ 		├─ MVC_ex
-│ 		├─ OOPJDBC_ex
-│ 		├─ docker_ex
-│ 		├─ mybatis_ex
-│ 		├─ structure_ex
+│ ├─ Java
+│  ├─ blog_ex
+│  ├─ java_ex
+│ ├─ Spring
+│  ├─ MVC_ex
+│  ├─ OOPJDBC_ex
+│  ├─ docker_ex
+│  ├─ mybatis_ex
+│  ├─ structure_ex
 ```
