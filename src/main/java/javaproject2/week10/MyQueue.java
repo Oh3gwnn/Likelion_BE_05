@@ -3,7 +3,7 @@ package javaproject2.week10;
 import javaproject2.week9.MyStack;
 
 public class MyQueue {
-    private final int[] arr = new int[16];
+    private final int[] arr = new int[4];
 
     // Queue 데이터 꺼내는 위치
     private int front = -1;
@@ -50,6 +50,7 @@ public class MyQueue {
         que.enQueue(4);
         System.out.println(que.deQueue());
 
+        // queue is full -> 위치는 복구가 안되기 때문
         que.enQueue(5);
         que.enQueue(6);
     }
