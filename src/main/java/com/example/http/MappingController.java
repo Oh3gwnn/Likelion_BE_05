@@ -27,13 +27,17 @@ public class MappingController {
         return "index";
     }
 
-    // '/path' - PUT, DELETE
-    @RequestMapping(
-            value = "/path",
-            method = { RequestMethod.PUT, RequestMethod.DELETE }
-    )
-    public String putOrDeletePath() {
-        log.info("PUT or DELETE /path");
+    // '/path' - PUT
+    @RequestMapping(value = "/path", method = RequestMethod.PUT)
+    public String putPath() {
+        log.info("PUT /path");
+        return "index";
+    }
+
+    // '/path' - DELETE
+    @RequestMapping(value = "/path", method = RequestMethod.DELETE)
+    public String DeletePath() {
+        log.info("DELETE /path");
         return "index";
     }
 }
