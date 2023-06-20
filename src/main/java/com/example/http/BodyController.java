@@ -1,6 +1,7 @@
 package com.example.http;
 
 import com.example.http.dto.ArticleDto;
+import com.example.http.dto.ArticleWithCommentsDto;
 import com.example.http.dto.ResponseDto;
 import com.example.http.dto.WriterDto;
 import lombok.extern.slf4j.Slf4j;
@@ -29,5 +30,9 @@ public class BodyController {
         return response;
     }
 
-
+    @PostMapping("/body-3") @ResponseBody
+    public ResponseDto body3(@RequestBody ArticleWithCommentsDto dto) {
+        log.info("POST /body-3 " + dto.toString());
+        return new ResponseDto();
+    }
 }
