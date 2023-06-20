@@ -1,10 +1,17 @@
 package com.example.http;
 
+import com.example.http.dto.ArticleDto;
+import com.example.http.dto.ResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -73,5 +80,25 @@ public class MappingController {
     public String params() {
         log.info("POST /path with parameter likelion");
         return "index";
+    }
+
+    @PostMapping("/entity")
+    public ResponseEntity<ResponseDto> entity(@RequestBody ArticleDto dto) {
+        log.info("POST /body " + dto.toString());
+        ResponseDto response = new ResponseDto();
+        response.setMessage("success");
+        response.setStatus(200);
+
+        // 상태 코드 지정 -> ResponseEntity 객체 그냥 사용
+        ResponseEntity<ResponseDto> responseEntity = new ResponseEntity<>(
+                        response, HttpStatus.INTERNAL_SERVER_ERROR);
+
+//        return responseEntity;
+
+        // 커스텀 헤더
+        HttpHeaders headers = new HttpHeaders();
+        headers.add("x-likelion-custom", "Hello World");
+        return new ResponseEntity<>(response, headers, HttpStatus.ACCEPTED);
+
     }
 }
