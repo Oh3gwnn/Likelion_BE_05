@@ -1,9 +1,6 @@
 package com.example.http;
 
-import com.example.http.dto.ArticleDto;
-import com.example.http.dto.ArticleWithCommentsDto;
-import com.example.http.dto.ResponseDto;
-import com.example.http.dto.WriterDto;
+import com.example.http.dto.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +30,12 @@ public class BodyController {
     @PostMapping("/body-3") @ResponseBody
     public ResponseDto body3(@RequestBody ArticleWithCommentsDto dto) {
         log.info("POST /body-3 " + dto.toString());
+        return new ResponseDto();
+    }
+
+    @PostMapping("/body-4") @ResponseBody
+    public ResponseDto body4(@RequestBody ArticleComplexDto dto) {
+        log.info("POST /body-4 " + dto.toString());
         return new ResponseDto();
     }
 }
