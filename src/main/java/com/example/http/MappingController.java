@@ -92,13 +92,18 @@ public class MappingController {
         // 상태 코드 지정 -> ResponseEntity 객체 그냥 사용
         ResponseEntity<ResponseDto> responseEntity = new ResponseEntity<>(
                         response, HttpStatus.INTERNAL_SERVER_ERROR);
-
 //        return responseEntity;
 
         // 커스텀 헤더
         HttpHeaders headers = new HttpHeaders();
         headers.add("x-likelion-custom", "Hello World");
-        return new ResponseEntity<>(response, headers, HttpStatus.ACCEPTED);
+//        return new ResponseEntity<>(response, headers, HttpStatus.ACCEPTED);
 
+        // Builder 사용
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .header("x-likelion-one", "1")
+                .headers(headers)
+                .body(response);
     }
 }
