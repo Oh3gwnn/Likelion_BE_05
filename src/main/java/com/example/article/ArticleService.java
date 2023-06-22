@@ -3,6 +3,9 @@ package com.example.article;
 import com.example.article.dto.ArticleDto;
 import com.example.article.entity.ArticleEntity;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -55,6 +58,14 @@ public class ArticleService {
         if (repository.existsById(id))
             repository.deleteById(id);
         else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+    }
 
+    public Page<ArticleEntity> readArticlePaged() {
+        // PagingAndSortingRepository 메서드에 전달하는 용도
+        // 조회하고 싶은 페이지의 정보를 담는 객체
+        // 20개씩 데이터를 나눌 때 0번 페이지를 달라고 요청하는 Pageable
+        Pageable pageable = PageRequest.of(0, 20);
+        Page<ArticleEntity> articleEntityPage = repository.findAll(pageable);
+        return articleEntityPage;
     }
 }
