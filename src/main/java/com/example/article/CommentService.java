@@ -23,7 +23,7 @@ public class CommentService {
         CommentEntity newComment = new CommentEntity();
         newComment.setWriter(dto.getWriter());
         newComment.setContent(dto.getContent());
-        newComment.setArticleId(dto.getArticleId());
+        newComment.setArticleId(articleId);
         newComment = commentRepository.save(newComment);
         return CommentDto.fromEntity(newComment);
     }
