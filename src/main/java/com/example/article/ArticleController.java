@@ -22,9 +22,17 @@ public class ArticleController {
     }
 
     // GET /articles
-    @GetMapping("")
-    public List<ArticleDto> readAll() {
-        return service.readArticleAll();
+//    @GetMapping("")
+//    public List<ArticleDto> readAll() {
+//        return service.readArticleAll();
+//    }
+
+    @GetMapping
+    public Page<ArticleDto> readAll(
+            @RequestParam(value = "page", defaultValue = "0") Integer page,
+            @RequestParam(value = "limit", defaultValue = "20") Integer limit
+    ) {
+        return service.readArticlePaged(page, limit);
     }
 
     // GET /articles/{id}
@@ -48,8 +56,8 @@ public class ArticleController {
         service.deleteArticle(id);
     }
 
-    @GetMapping("/page-test")
-    public Page<ArticleDto> readPageTest() {
-        return service.readArticlePaged();
-    }
+//    @GetMapping("/page-test")
+//    public Page<ArticleDto> readPageTest() {
+//        return service.readArticlePaged();
+//    }
 }
