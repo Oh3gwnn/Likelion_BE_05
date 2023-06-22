@@ -49,7 +49,7 @@ public class ArticleController {
     }
 
     @GetMapping("/page-test")
-    public void readPageTest() {
-//        return service.readArticlePaged();
+    public Page<ArticleDto> readPageTest() {
+        return service.readArticlePaged();
     }
 }
