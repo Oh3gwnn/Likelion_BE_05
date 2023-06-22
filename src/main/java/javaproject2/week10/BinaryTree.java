@@ -19,4 +19,15 @@ public class BinaryTree {
             this.traversePreorder(node * 2 + 1);  // 오른쪽 자식(i * 2 + 1)을 루트로 다시 preorder 호출
         }
     }
+
+    // 중위 순회 L -> V -> R
+    // inorder(): preorder(L) -> System.out.print(V) -> preorder(R)
+    public void traverseInorder(int node) {
+        if (node < this.nodes && arr[node] != 0) {
+            this.traverseInorder(node * 2);       // 왼쪽 자식(i * 2)을 루트로 다시 preorder 호출
+            System.out.print(arr[node] + ", ");   // 방문
+            this.traverseInorder(node * 2 + 1);   // 오른쪽 자식(i * 2 + 1)을 루트로 다시 preorder 호출
+        }
+    }
+
 }
