@@ -75,8 +75,10 @@ public class ArticleService {
 //        }
 //        return articleDtoList;
 
+        // map -> 전달받은 함수를 각 원소에 인자로 전달한 결과를 다시 모아서 Stream으로
+        // Page.map -> 전달받은 함수를 각 원소에 인자로 전달한 결과를 다시 모아서 Page으로
         Page<ArticleEntity> articleEntities = repository.findAll(pageable);
-        Page<ArticleDto> articleDtoPage // page.map()
+        Page<ArticleDto> articleDtoPage // Page.map()
                 = articleEntityPage.map(ArticleDto::fromEntity);
         return articleDtoPage;
     }
