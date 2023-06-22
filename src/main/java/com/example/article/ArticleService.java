@@ -60,12 +60,11 @@ public class ArticleService {
         else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
-    public Page<ArticleEntity> readArticlePaged() {
+    public void readArticlePaged() {
         // PagingAndSortingRepository 메서드에 전달하는 용도
         // 조회하고 싶은 페이지의 정보를 담는 객체
         // 20개씩 데이터를 나눌 때 0번 페이지를 달라고 요청하는 Pageable
         Pageable pageable = PageRequest.of(0, 20);
         Page<ArticleEntity> articleEntityPage = repository.findAll(pageable);
-        return articleEntityPage;
     }
 }
