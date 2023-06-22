@@ -37,4 +37,10 @@ public class CommentController {
         return service.updateComment(articleId, commentId, dto);
     }
     // TODO 게시글 댓글 삭제
+    @DeleteMapping("/{commentId}")
+    public void deleteComment(
+            @PathVariable("articleId") Long articleId,
+            @PathVariable("commentId") Long commentId) {
+        service.deleteComment(articleId, commentId);
+    }
 }

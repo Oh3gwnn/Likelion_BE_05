@@ -50,6 +50,7 @@ public class CommentService {
         if (optionalComment.isEmpty())
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
+        // 대상 댓글 == 대상 게시글의 댓글인지
         CommentEntity comment = optionalComment.get();
         if (!articleId.equals(comment.getArticleId()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
@@ -60,4 +61,16 @@ public class CommentService {
     }
 
     // TODO 게시글 댓글 삭제
+    public void deleteComment(Long articleId, Long commentId) {
+        Optional<CommentEntity> optionalComment = commentRepository.findById(commentId);
+
+        if (optionalComment.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
+        CommentEntity comment = optionalComment.get();
+        if (!articleId.equals(comment.getArticleId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+
+        commentRepository.deleteById(commentId);
+    }
 }
