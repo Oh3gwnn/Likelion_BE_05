@@ -9,6 +9,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service @RequiredArgsConstructor
 public class CommentService {
@@ -39,5 +40,24 @@ public class CommentService {
     }
 
     // TODO 게시글 댓글 수정
+    // 수정하고자 하는 댓글이 지정한 게시글에 있는지 확인할 목적으로 articleId도 첨부
+    public CommentDto updateComment(
+            Long articleId, Long commentId, CommentDto dto) {
+        // 요청 댓글 존재 유무
+        Optional<CommentEntity> optionalComment = commentRepository.findById(commentId);
+
+        // 존재 X -> exception
+        if (optionalComment.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+
+        CommentEntity comment = optionalComment.get();
+        if (!articleId.equals(comment.getArticleId()))
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+
+        comment.setContent(dto.getContent());
+        comment.setWriter(dto.getWriter());
+        return CommentDto.fromEntity(commentRepository.save(comment));
+    }
+
     // TODO 게시글 댓글 삭제
 }

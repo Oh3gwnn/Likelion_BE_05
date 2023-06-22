@@ -9,7 +9,8 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequiredArgsConstructor @RequestMapping("/articles/{articleId}/comments")
+@RequiredArgsConstructor
+@RequestMapping("/articles/{articleId}/comments")
 public class CommentController {
     private final CommentService service;
 
@@ -27,5 +28,13 @@ public class CommentController {
     }
 
     // TODO 게시글 댓글 수정
+    @PutMapping("/{commentId}")
+    public CommentDto updateAll(
+            @PathVariable("articleId") Long articleId,
+            @PathVariable("commentId") Long commentId,
+            @RequestBody CommentDto dto
+            ) {
+        return service.updateComment(articleId, commentId, dto);
+    }
     // TODO 게시글 댓글 삭제
 }
