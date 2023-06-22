@@ -7,6 +7,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service @RequiredArgsConstructor
 public class CommentService {
     private final ArticleRepository articleRepository;
@@ -23,6 +26,18 @@ public class CommentService {
         newComment.setArticleId(dto.getArticleId());
         newComment = commentRepository.save(newComment);
         return CommentDto.fromEntity(newComment);
-
     }
+
+    // TODO 게시글 댓글 전체 조회
+    public List<CommentDto> readCommentAll(Long articleId) {
+        List<CommentEntity> commentEntities = commentRepository.findAllByArticleId(articleId);
+        List<CommentDto> commentList = new ArrayList<>();
+        for (CommentEntity entity : commentEntities) {
+            commentList.add(CommentDto.fromEntity(entity));
+        }
+        return commentList;
+    }
+
+    // TODO 게시글 댓글 수정
+    // TODO 게시글 댓글 삭제
 }
