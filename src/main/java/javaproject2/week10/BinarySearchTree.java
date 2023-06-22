@@ -35,7 +35,6 @@ public class BinarySearchTree {
         // 재귀호출
         // 현재 노드보다 데이터가 작을 경우 왼쪽 트리로 이동
         if (key < node.key) node.left = insertNode(node.left, key);
-
         // 현재 노드보다 데이터가 클 경우 오른쪽 트리로 이동
         else if(key > node.key) node.right = insertNode(node.right, key);
 
@@ -59,8 +58,37 @@ public class BinarySearchTree {
         // 재귀호출
         // 현재 노드보다 데이터가 작을 경우 왼쪽 서브트리 탐색 결과 반환
         if (key < node.key) return searchNode(node.left, key);
-
         // 현재 노드보다 데이터가 클 경우 오른쪽 탐색 결과 반환
         else return searchNode(node.right, key);
+    }
+
+    // 중위 순회
+    public void inorderTraversal() {
+        inorder(root);
+    }
+
+    private void inorder(Node node) {
+        if (node != null) {
+            inorder(node.left);
+            System.out.print(node.key + " ");
+            inorder(node.right);
+        }
+    }
+
+    public static void main(String[] args) {
+        int[] data = new int[]{50, 30, 70, 20, 40, 60, 80};
+        BinarySearchTree bst = new BinarySearchTree();
+
+        for (int num : data) {
+            bst.insert(num);
+        }
+
+        System.out.println("중위 순회");
+        bst.inorderTraversal();
+        System.out.println();
+
+        System.out.println(bst.search(55));
+        System.out.println(bst.search(40));
+        System.out.println(bst.search(80));
     }
 }
