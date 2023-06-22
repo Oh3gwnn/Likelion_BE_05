@@ -2,12 +2,12 @@ package javaproject2.week10;
 
 public class BinarySearchTree {
     private static class Node {
-        int data;
+        int key;
         Node left;
         Node right;
 
         public Node(int data) {
-            this.data = data;
+            this.key = data;
             left = null;
             right = null;
         }
@@ -32,7 +32,7 @@ public class BinarySearchTree {
             return node;
         }
 
-        //재귀호출
+        // 재귀호출
         // 현재 노드보다 데이터가 작을 경우 왼쪽 트리로 이동
         if (key < node.key) node.left = insertNode(node.left, key);
 
@@ -41,5 +41,26 @@ public class BinarySearchTree {
 
         // 삽입 X -> 본래 자식 반환
         return node;
+    }
+
+    // 탐색 메서드
+    public boolean search(int key) {
+        return searchNode(root, key);
+    }
+
+    // 탐색 재귀함수
+    private boolean searchNode(Node node, int key) {
+        // 현재 노드 Null
+        if (node == null) return false;
+
+        // 탐색 성공
+        if (key == node.key) return true;
+
+        // 재귀호출
+        // 현재 노드보다 데이터가 작을 경우 왼쪽 서브트리 탐색 결과 반환
+        if (key < node.key) return searchNode(node.left, key);
+
+        // 현재 노드보다 데이터가 클 경우 오른쪽 탐색 결과 반환
+        else return searchNode(node.right, key);
     }
 }
