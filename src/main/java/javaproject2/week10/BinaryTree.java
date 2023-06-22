@@ -30,4 +30,13 @@ public class BinaryTree {
         }
     }
 
+    // 후위 순회 L -> R -> V
+    // inorder(): preorder(L) -> preorder(R) -> System.out.print(V)
+    public void traversePostorder(int node) {
+        if (node < this.nodes && arr[node] != 0) {
+            this.traversePostorder(node * 2);       // 왼쪽 자식(i * 2)을 루트로 다시 preorder 호출
+            this.traversePostorder(node * 2 + 1);   // 오른쪽 자식(i * 2 + 1)을 루트로 다시 preorder 호출
+            System.out.print(arr[node] + ", ");   // 방문
+        }
+    }
 }
