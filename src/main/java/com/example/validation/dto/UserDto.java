@@ -1,5 +1,6 @@
 package com.example.validation.dto;
 
+import com.example.validation.constraints.annotations.Blacklist;
 import com.example.validation.constraints.annotations.EmailWhiteList;
 import com.example.validation.constraints.annotations.Phone010;
 import jakarta.validation.constraints.*;
@@ -11,7 +12,8 @@ import java.time.LocalDate;
 public class UserDto {
     private Long id;
 
-    @NotBlank
+    @NotBlank @Size(min = 8, message = "최소 8글자 이상이여야 합니다.")
+    @Blacklist(blacklist = {"blacklist"})
     private String username;
     @Email
     @EmailWhiteList // 이메일이 지정된 도메인이도록 검증하는 어노테이션
