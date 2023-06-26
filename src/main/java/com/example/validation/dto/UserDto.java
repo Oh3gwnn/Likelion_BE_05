@@ -1,6 +1,7 @@
 package com.example.validation.dto;
 
 import com.example.validation.constraints.annotations.EmailWhiteList;
+import com.example.validation.constraints.annotations.Phone010;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -15,7 +16,7 @@ public class UserDto {
     @Email
     @EmailWhiteList // 이메일이 지정된 도메인이도록 검증하는 어노테이션
     private String email;
-    @NotNull
+    @NotNull @Phone010 // (010), 010- 으로 시작하는지 검증하는 어노테이션
     private String phone;
 
     @NotNull @Min(value = 14, message = "최소 8글자 이상 작성해주세요.") // 최솟값
