@@ -1,5 +1,6 @@
 package com.example.validation.dto;
 
+import com.example.validation.constraints.annotations.EmailWhiteList;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
@@ -12,6 +13,7 @@ public class UserDto {
     @NotBlank
     private String username;
     @Email
+    @EmailWhiteList // 이메일이 지정된 도메인이도록 검증하는 어노테이션
     private String email;
     @NotNull
     private String phone;
