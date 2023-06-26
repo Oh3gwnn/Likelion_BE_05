@@ -16,7 +16,7 @@ public class UserDto {
     @NotNull
     private String phone;
 
-    @NotNull @Min(14) // 최솟값
+    @NotNull @Min(value = 14, message = "최소 8글자 이상 작성해주세요.") // 최솟값
     private Integer age;
 
     @Future // 미래의 시간만
