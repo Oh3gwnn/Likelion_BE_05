@@ -2,6 +2,7 @@ package com.example.validation.constraints.annotations;
 
 import com.example.validation.constraints.EmailWhitelistValidator;
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 import org.springframework.stereotype.Controller;
 
 import java.lang.annotation.ElementType;
@@ -14,4 +15,6 @@ import java.lang.annotation.Target;
 @Constraint(validatedBy = EmailWhitelistValidator.class)
 public @interface EmailWhiteList {
     String message() default "email not in whitelist";
+    Class<?>[] groups() default {};
+    Class<? extends Payload>[] payload() default {};
 }

@@ -20,7 +20,7 @@ public class EmailWhitelistValidator
     }
 
     @Override
-    public boolean isVaild(String value, ConstraintValidatorContext context) {
+    public boolean isValid(String value, ConstraintValidatorContext context) {
         // 유효한 값일 때 true를 변환(아니면 false)
         String[] split = value.split("@");
         String domain = split[split.length - 1];
