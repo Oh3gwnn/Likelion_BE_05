@@ -3,6 +3,7 @@ package com.example.aop.aspect;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.Signature;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -14,7 +15,10 @@ public class LoggingAspect {
     // 컨트롤러 클래스 Full Name
     // @Before: Advice, 실제 실행될 코드
     // @Before.value: Pointcut Designator, 어느 JoinPoint에서 실행될 것인지
-    @Before("this(com.example.aop.controller.AopController)")
+    // this -> 클래스 instance 지정
+    // within -> 클래스 or 패키지 지정
+    // @annotation: 어노테이션 지정
+    @After("@annotation(com.example.aop.aspect.LogArguments)")
     // JoinPoint: 이 Advice가 실행된 JoinPoint (addUser)
     public void logParameters(JoinPoint joinPoint) {
         // Signature: JoinPiont의 정보를 담은 객체
