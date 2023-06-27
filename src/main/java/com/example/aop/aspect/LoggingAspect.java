@@ -2,8 +2,10 @@ package com.example.aop.aspect;
 
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -31,5 +33,19 @@ public class LoggingAspect {
         if (arguments.length == 0) log.info("no args");
 
         for (Object argument : arguments) log.info("argument: [{}]", argument);
+    }
+
+    // 어떤 메서드가 실행되는데 걸리는 시간을 기록
+    @Around("@annotation(com.example.aop.aspect.LogExecutionTime)")
+    public Object logExecutionTime(ProceedingJoinPoint joinPoint)
+            throws Throwable {
+        long startTime = System.currentTimeMillis();
+        Object proceed = joinPoint.proceed();
+
+        long endTime = System.currentTimeMillis();
+        log.info("{} executed in: {}ms",
+                joinPoint.getSignature(), endTime - startTime);
+
+        return proceed;
     }
 }
