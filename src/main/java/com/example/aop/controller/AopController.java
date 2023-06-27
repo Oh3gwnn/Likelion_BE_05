@@ -1,4 +1,4 @@
-package com.example.aop;
+package com.example.aop.controller;
 
 import com.example.aop.dto.ResponseDto;
 import com.example.aop.dto.UserDto;
