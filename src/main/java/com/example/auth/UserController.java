@@ -1,6 +1,8 @@
 package com.example.auth;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.UserDetailsManager;
@@ -19,8 +21,14 @@ public class UserController {
         return "login-form";
     }
 
+    // 로그인 성공 후 로그인 여부를 판단하기 위한 GetMapping
     @GetMapping("/my-profile")
-    public String myProfile() {
+    public String myProfile(
+            Authentication authentication
+    ) {
+        log.info(authentication.getName());
+        log.info(((User) authentication.getPrincipal()).getUsername());
+        log.info(SecurityContextHolder.getContext().getAuthentication().getName());
         return "my-profile";
     }
 
