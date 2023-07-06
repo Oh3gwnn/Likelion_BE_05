@@ -29,7 +29,7 @@ public class WebSecurityConfig {
                 .permitAll()                  // permitAll -> 누가 요청해도 허락한다.
                 .requestMatchers("re-auth", "/users/my-profile")
                 .authenticated()              // 인증이 된 사용자 허가
-                .requestMatchers("/")
+                .requestMatchers("/", "/users/register")
                 .anonymous()                  // 인증이 되지 않은 사용자(익명) 허가
         // 로그인 -> 쿠키를 통해 세션 생성
         ).formLogin(formLogin -> formLogin
