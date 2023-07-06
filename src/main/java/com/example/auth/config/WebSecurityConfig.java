@@ -19,6 +19,10 @@ public class WebSecurityConfig {
         http.authorizeHttpRequests(authHttp -> authHttp
                 .requestMatchers("no-auth") // requestMatchers -> 어떤 URL로 오는 요청에 대하여 설명하는지
                 .permitAll() // permitAll -> 누가 요청해도 허락한다.
+                .requestMatchers("re-auth")
+                .authenticated() //
+                .requestMatchers("/")
+                .anonymous()
         );
 
         return http.build();
