@@ -59,9 +59,14 @@ public class UserController {
     ) {
         if (password.equals(passwordCheck)) {
             log.info("password match!");
-            manager.createUser(User.withUsername(username)
+//            manager.createUser(User.withUsername(username)
+//                    .password(passwordEncoder.encode(password))
+//                    .build());
+            manager.createUser(CustomUserDetails.builder()
+                    .username(username)
                     .password(passwordEncoder.encode(password))
                     .build());
+
             return "redirect:/users/login";
         }
         log.warn("password does not match...");
