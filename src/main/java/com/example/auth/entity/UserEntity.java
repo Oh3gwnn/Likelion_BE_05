@@ -11,6 +11,7 @@ public class UserEntity {
     private Long id;
 
     // DB 제약사항 추가
+    // hibernate <-> Sqlite : unique 충돌 error -> 실행 문제 X
     @Column(nullable = false, unique = true)
     private String username;
     private String password;
