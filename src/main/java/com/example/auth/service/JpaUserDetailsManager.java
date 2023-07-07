@@ -1,5 +1,6 @@
 package com.example.auth.service;
 
+import com.example.auth.entity.CustomUserDetails;
 import com.example.auth.entity.UserEntity;
 import com.example.auth.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
@@ -24,8 +25,14 @@ public class JpaUserDetailsManager implements UserDetailsManager {
                                  PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-        createUser(User.withUsername("user")
+//        createUser(User.withUsername("user")
+//                .password(passwordEncoder.encode("asdf"))
+//                .build());
+        // CustomUserDetails
+        createUser(CustomUserDetails.builder()
+                .username("user")
                 .password(passwordEncoder.encode("asdf"))
+                .email("qwerty123@naver.com")
                 .build());
     }
 
@@ -36,9 +43,11 @@ public class JpaUserDetailsManager implements UserDetailsManager {
         Optional<UserEntity> optionalUser = userRepository.findByUsername(username);
         if (optionalUser.isEmpty()) throw new UsernameNotFoundException(username);
         UserEntity userEntity = optionalUser.get();
-        return User.withUsername(userEntity.getUsername())
-                .password(userEntity.getPassword())
-                .build();
+//        return User.withUsername(userEntity.getUsername())
+//                .password(userEntity.getPassword())
+//                .build();
+        // CustomUserDetails
+        return CustomUserDetails.fromEntity(optionalUser.get());
     }
     // 아래는 선택사항(필수 아님)
 
@@ -47,10 +56,16 @@ public class JpaUserDetailsManager implements UserDetailsManager {
         log.info("try create user: {}", user.getUsername());
         if (this.userExists(user.getUsername()))
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        UserEntity userEntity = new UserEntity();
-        userEntity.setUsername(user.getUsername());
-        userEntity.setPassword(user.getPassword());
-        this.userRepository.save(userEntity);
+//        UserEntity userEntity = new UserEntity();
+//        userEntity.setUsername(user.getUsername());
+//        userEntity.setPassword(user.getPassword());
+//        this.userRepository.save(userEntity);
+        try {
+            userRepository.save(((CustomUserDetails) user).newEntity());
+        } catch (ClassCastException e) {
+            log.error("failed to cast to {}", CustomUserDetails.class);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     @Override // 계정이름을 가진 사용자가 존재하는지 확인
