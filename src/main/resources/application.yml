@@ -8,6 +8,5 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    database: h2
     database-platform: org.hibernate.community.dialect.SQLiteDialect
     show-sql: true
